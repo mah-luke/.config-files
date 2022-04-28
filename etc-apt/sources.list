@@ -1,0 +1,13 @@
+
+deb http://deb.debian.org/debian/ stable main non-free contrib
+deb-src http://deb.debian.org/debian/ stable main non-free contrib
+
+deb http://deb.debian.org/debian/ testing main non-free contrib
+deb-src http://deb.debian.org/debian/ testing main non-free contrib
+
+deb http://deb.debian.org/debian/ unstable main non-free contrib
+deb-src http://deb.debian.org/debian/ unstable main non-free contrib
+
+# deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+# deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+# deb cdrom:[Debian GNU/Linux 11.2.0 _Bullseye_ - Unofficial amd64 NETINST with firmware 20211218-11:12]/ bullseye contrib main non-free
