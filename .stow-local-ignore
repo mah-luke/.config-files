@@ -1,3 +1,5 @@
+# Config file similar to gitignore for stow
+
 \.git
 misc
 ^/.*\.md

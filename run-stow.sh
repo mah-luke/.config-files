@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# correct path if script was called via sudo
+# correct path even if script was called via sudo
 DIR="$(eval echo ~${SUDO_USER})/.config-files"
 
 stow --dir=$DIR --target=$HOME home
