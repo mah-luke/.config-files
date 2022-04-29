@@ -111,15 +111,11 @@ if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
 	source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# Load aliases
+. $HOME/.config/shell/aliases.sh
+
+# Load environment
+. $HOME/.config/shell/environment.sh
+
 # Starship prompt
 eval "$(starship init zsh)"
-
-# Load aliases
-# . $HOME/Programming/aliases.sh
-
-export SSH_AUTH_SOCK=/run/user/$(id -u)/keyring/ssh
-#GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-#SSH_AUTH_SOCK=`netstat -xl | grep -o '/run/user/1000/keyring-.*/ssh$'`
-#[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK
-
-alias cursem="cd $HOME/OneDrive-TU/Uni/6.Semester"
