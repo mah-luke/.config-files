@@ -1,0 +1,2 @@
+load-module module-equalizer-sink
+load-module module-dbus-protocol

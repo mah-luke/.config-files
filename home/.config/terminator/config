@@ -3,7 +3,10 @@
 [keybindings]
 [profiles]
   [[default]]
+    background_darkness = 0.90
+    background_type = transparent
     cursor_color = "#aaaaaa"
+    background_image = /home/lukas/Pictures/1151249.jpg
 [layouts]
   [[default]]
     [[[child0]]]
