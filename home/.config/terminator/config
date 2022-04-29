@@ -1,0 +1,66 @@
+[global_config]
+  focus = system
+  handle_size = -10
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  sticky = True
+  title_transmit_bg_color = "#15172d"
+  suppress_multiple_term_dialog = True
+  always_split_with_profile = True
+  title_font = Sans 1
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    scrollbar_position = hidden
+    scroll_on_output = True
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_theme_colors = True
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:201
+      maximised = True
+      fullscreen = False
+      size = 1920, 1043
+      title = /bin/zsh
+      last_active_term = a6fcd9c0-2d7f-4ba3-9dcc-f184ce2badca
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 931
+      ratio = 0.48616187989556137
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = a6fcd9c0-2d7f-4ba3-9dcc-f184ce2badca
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 474
+      ratio = 0.45664739884393063
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      uuid = 84f3679d-f2c5-48ec-ab7e-39173a018a2e
+      command = ""
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      uuid = 318c672f-f207-4d03-b9a1-e0c4e7db320d
+      command = htop
+c[plugins]
