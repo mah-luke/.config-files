@@ -10,3 +10,7 @@ sudo stow --dir=$DIR --target=/etc etc
 
 
 # --- DEVICE SPECIFIC ---
+
+# needs fix:
+# load-module module-equalizer-sink
+# load-module module-dbus-protocol

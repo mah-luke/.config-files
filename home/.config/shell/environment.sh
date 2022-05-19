@@ -8,3 +8,6 @@ export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 
 export sem=$HOME/OneDrive-TU/Uni/6.Semester
+
+export sse_pw=abebohw5EeWietha6soK
+export sse=~/Programming/uni/sse/Sec4SystemsEngineering_lab1
