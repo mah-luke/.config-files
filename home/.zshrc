@@ -61,7 +61,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/frank/.zshrc'
+zstyle :compinstall filename '/home/lukas/.zshrc'
 
 autoload -Uz promptinit
 promptinit
@@ -105,6 +105,7 @@ export GPG_TTY=$(tty)
 #    start_agent;
 #fi
 
+plugins=(git)
 
 # syntax highlighting
 if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
