@@ -61,49 +61,14 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/lukas/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz promptinit
 promptinit
-# End of lines added by compinstall
-
-
-# alias
-# source "$XDG_CONFIG_HOME/zsh/aliasrc"
 
 # gpg pinentry
 export GPG_TTY=$(tty)
 
-# ssh-agent
-#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#    ssh-agent -t 24h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-#fi
-#if [[ ! "$SSH_AUTH_SOCK" ]]; then
-#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-#fi
-
-#SSH_ENV="$HOME/.ssh/agent-environment"
-
-#function start_agent {
-#    echo "Initialising new SSH agent..."
-#    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-#    echo succeeded
-#    chmod 600 "${SSH_ENV}"
-#    . "${SSH_ENV}" > /dev/null
-#    /usr/bin/ssh-add;
-#}
-
-# Source SSH settings, if applicable
-
-#if [ -f "${SSH_ENV}" ]; then
-#    . "${SSH_ENV}" > /dev/null
-#    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-#    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-#        start_agent;
-#    }
-#else
-#    start_agent;
-#fi
 
 plugins=(git)
 
