@@ -4,4 +4,6 @@ pactl set-source-volume alsa_input.usb-USB_MICROPHONE_USB_MICROPHONE_20190809-00
 # noisetorch
 # noisetorch -i alsa_input.usb-USB_MICROPHONE_USB_MICROPHONE_20190809-00.analog-stereo -t 90 
 
-[[ -f ~/.config/xmodmap/xmodmap]] && xmodmap ~/.config/xmodmap/xmodmap
+xmodmap ~/.config/xmodmap/xmodmap
+
+touch ~/xprofileworking.txt
