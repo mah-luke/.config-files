@@ -27,7 +27,7 @@
       position = 538
       ratio = 0.5
     [[[child2]]]
-      type = HPaned
+      type = VPaned
       parent = child1
       order = 0
       position = 939
@@ -46,7 +46,7 @@
       uuid = c3a615da-ae5f-427a-8c92-78fff9bc8aca
       command = . ~/.config/shell/environment.sh; cd $sem; exec zsh
     [[[child5]]]
-      type = HPaned
+      type = VPaned
       parent = child1
       order = 1
       position = 939
@@ -64,5 +64,5 @@
       order = 1
       profile = default
       uuid = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
-      command = htop
+      command = htop; exec zsh
 [plugins]

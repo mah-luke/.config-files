@@ -61,11 +61,10 @@ zle-line-init() {
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/lukas/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz promptinit
 promptinit
-# End of lines added by compinstall
 
 # gpg pinentry
 export GPG_TTY=$(tty)
