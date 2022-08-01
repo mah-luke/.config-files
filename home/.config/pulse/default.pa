@@ -142,5 +142,5 @@ load-module module-filter-apply
 .include $HOME/.config/pulse/default.pa.d
 
 # my plugins
-load-module module-equalizer-sink
-load-module module-dbus-protocol
+#load-module module-equalizer-sink
+#load-module module-dbus-protocol

@@ -56,7 +56,6 @@
       parent = child5
       order = 0
       profile = default
-      uuid = dcf32232-2277-4bb1-83f5-8db545839b00
       command = cd Programming; exec zsh
     [[[terminal7]]]
       type = Terminal
