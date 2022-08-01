@@ -50,7 +50,7 @@ function zle-keymap-select () {
         viins|main) echo -ne '\e[5 q';; # beam
     esac
 }
-zle -N zle-keymap-select
+# zle -N zle-keymap-select
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
     echo -ne "\e[5 q"
@@ -69,8 +69,9 @@ promptinit
 # gpg pinentry
 export GPG_TTY=$(tty)
 
+SSH_ENV="$HOME/.ssh/agent-environment"
 
-plugins=(git)
+# plugins=(git)
 
 # syntax highlighting
 if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
