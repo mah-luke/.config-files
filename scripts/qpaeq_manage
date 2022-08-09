@@ -1,0 +1,31 @@
+#! /bin/sh
+
+input=$1
+
+modules="module-equalizer-sink module-dbus-protocol"
+
+load_qpaeg () {
+    echo "$modules" | tr ' ' '\n' | while read -r module; do
+        echo "loading $module..."
+        pactl load-module "$module"
+    done
+}
+
+unload_qpaeg () {
+    echo "$modules" | tr ' ' '\n' | while read -r module; do
+        echo "unloading $module..."
+        pactl unload-module "$module"
+    done
+}
+
+if [ -z "$input" ]
+then
+    echo "loading qpaeg..."
+    load_qpaeg
+else
+    echo "unloading qpaeg..."
+    unload_qpaeg
+fi
+
+echo "qpaeg setup finished"
+
