@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+sudo openconnect --user e11908553@student.tuwien.ac.at vpn.tuwien.ac.at
+# use Profile 2, then enter pw%

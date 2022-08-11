@@ -87,5 +87,8 @@ export PATH=~/.local/bin:$PATH
 # Load environment
 . $HOME/.config/shell/environment.sh
 
+# Add to path
+export PATH=~/.config-files/scripts:$PATH
+
 # Starship prompt
 eval "$(starship init zsh)"
