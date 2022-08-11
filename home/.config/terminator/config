@@ -1,12 +1,15 @@
 [global_config]
   suppress_multiple_term_dialog = True
+  always_split_with_profile = True
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.90
+    background_darkness = 0.9
     background_type = transparent
     cursor_color = "#aaaaaa"
     background_image = /home/lukas/Pictures/1151249.jpg
+  [[laptop]]
+    cursor_color = "#aaaaaa"
 [layouts]
   [[default]]
     [[[child0]]]
@@ -64,4 +67,34 @@
       profile = default
       uuid = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
       command = htop; exec zsh
+  [[horizontal]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1011
+      title = /bin/zsh
+      last_active_term = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
+      last_active_window = True
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 503
+      ratio = 0.5
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = ba193091-36bb-4338-ba34-02e6e91f1ee6
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
 [plugins]
