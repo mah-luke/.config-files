@@ -15,6 +15,11 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+alias .2="cd ../.."
+alias .3=".2 && cd .."
+alias .4=".3 && cd .."
+alias .5=".4 && cd .."
+
 alias sse="echo ${sse} | xsel -ib"
 
 alias update="sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get dist-upgrade"
