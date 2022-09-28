@@ -77,7 +77,7 @@
       fullscreen = False
       size = 1920, 1011
       title = /bin/zsh
-      last_active_term = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
+      last_active_term = ba193091-36bb-4338-ba34-02e6e91f1ee6
       last_active_window = True
     [[[child1]]]
       type = VPaned
@@ -85,16 +85,40 @@
       order = 0
       position = 503
       ratio = 0.5
-    [[[terminal2]]]
-      type = Terminal
+    [[[child2]]]
+      type = HPaned
       parent = child1
+      order = 0
+      position = 958
+      ratio = 0.5002610966057441
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
       order = 0
       profile = default
       uuid = ba193091-36bb-4338-ba34-02e6e91f1ee6
-    [[[terminal3]]]
+    [[[terminal4]]]
       type = Terminal
-      parent = child1
+      parent = child2
       order = 1
       profile = default
+      uuid = 47dcb54f-f631-474c-939d-b06f1a359b31
+    [[[child5]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 958
+      ratio = 0.5002610966057441
+    [[[terminal6]]]
+      type = Terminal
+      parent = child5
+      order = 0
+      profile = default
       uuid = bfd50c38-f4c1-4760-a3ed-393a8f63e6cf
+    [[[terminal7]]]
+      type = Terminal
+      parent = child5
+      order = 1
+      profile = default
+      uuid = a5017b31-2116-4d0c-9730-65c3eb0be811
 [plugins]
