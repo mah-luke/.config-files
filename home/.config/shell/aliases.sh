@@ -2,7 +2,7 @@
 
 
 # --- uni ---
-alias sem='cd $HOME/OneDrive-TU/Uni/6.Semester'
+alias sem='cd $HOME/OneDrive-TU/Uni/7.Semester'
 
 # ---- application ---
 alias v="nvim"
