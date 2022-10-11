@@ -71,8 +71,8 @@ SSH_ENV="$HOME/.ssh/agent-environment"
 # plugins=(git)
 
 # syntax highlighting
-if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
-	source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -d "/usr/share/zsh/plugins/zsh-syntax-highlighting" ]; then
+	source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # add .local/bin to PATH for pip executables
