@@ -3,12 +3,12 @@
 # --- DEFAULT CONFIG ---
 
 # correct path even if script was called via sudo
-DIR="$(eval echo ~${SUDO_USER})/.config-files"
+DIR="$(eval echo ~"${SUDO_USER}")/.config-files"
 
 git stash
 
-stow --dir=$DIR --target=$HOME home --adopt
-sudo stow --dir=$DIR --target=/etc etc --adopt
+stow --dir="$DIR" --target="$SHOME" home --adopt
+sudo stow --dir="$DIR" --target=/etc etc --adopt
 
 # Remove changes caused by adopt
 git reset --hard
