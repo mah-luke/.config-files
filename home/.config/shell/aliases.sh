@@ -26,8 +26,3 @@ alias update="sudo rm -rf /var/lib/dpkg/lock-frontend &&
                 sudo apt-get dist-upgrade -y &&
                 sudo apt-get autoremove -y &&
                 sudo apt-get autoclean -y"
-
-alias update="sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get dist-upgrade"
-
-# eval $(thefuck --alias)
-# eval $(thefuck --alias FUCK)
