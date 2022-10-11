@@ -6,7 +6,7 @@ alias sem='cd $HOME/OneDrive-TU/Uni/7.Semester'
 
 # ---- application ---
 alias v="nvim"
-alias clip="xsel -b"
+alias clip="xclip -selection c"
 
 alias ..="cd .."
 alias ...="cd ../.."

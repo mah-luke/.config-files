@@ -75,6 +75,11 @@ if [ -d "/usr/share/zsh/plugins/zsh-syntax-highlighting" ]; then
 	source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# autosuggestion
+if [ -d "/usr/share/zsh/plugins/zsh-autosuggestions" ]; then
+	source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
 # add .local/bin to PATH for pip executables
 export PATH=~/.local/bin:$PATH
 
