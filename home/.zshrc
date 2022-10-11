@@ -75,6 +75,9 @@ if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
 	source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# add .local/bin to PATH for pip executables
+export PATH=~/.local/bin:$PATH
+
 # Load aliases
 . $HOME/.config/shell/aliases.sh
 

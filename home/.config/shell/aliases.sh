@@ -2,8 +2,7 @@
 
 
 # --- uni ---
-alias sem="cd $HOME/OneDrive-TU/Uni/6.Semester"
-alias sse="cd $HOME/Programming/uni/sse/Sec4SystemsEngineering_lab1"
+alias sem='cd $HOME/OneDrive-TU/Uni/7.Semester'
 
 # ---- application ---
 alias v="nvim"
@@ -15,9 +14,20 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-# alias sse="echo ${sse} | xsel -ib"
+alias .2="cd ../.."
+alias .3=".2 && cd .."
+alias .4=".3 && cd .."
+alias .5=".4 && cd .."
 
-# alias update="sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get dist-upgrade"
+alias update="sudo rm -rf /var/lib/dpkg/lock-frontend &&
+                sudo rm -rf /var/lib/dpkg/lock &&
+                sudo apt-get update && 
+                sudo apt-get upgrade -y &&
+                sudo apt-get dist-upgrade -y &&
+                sudo apt-get autoremove -y &&
+                sudo apt-get autoclean -y"
+
+alias update="sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get dist-upgrade"
 
 # eval $(thefuck --alias)
 # eval $(thefuck --alias FUCK)
