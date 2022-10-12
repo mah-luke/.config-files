@@ -1,3 +1,4 @@
+# Runs every start of zsh
 
 # Enable colors
 autoload -U colors && colors
