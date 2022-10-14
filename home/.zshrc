@@ -1,3 +1,4 @@
+# Runs every start of zsh
 
 # Enable colors
 autoload -U colors && colors
@@ -22,6 +23,8 @@ autoload -U colors && colors
 HISTFILE=~/.cache/zsh/history
 HISTSIZE=1000
 SAVEHIST=1000
+
+fpath+=~/.zfunc
 
 # Basic auto/tab completion
 autoload -Uz compinit
@@ -50,12 +53,7 @@ function zle-keymap-select () {
         viins|main) echo -ne '\e[5 q';; # beam
     esac
 }
-# zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
+# zle -N zle-keymaphip init zsh)"-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
@@ -74,8 +72,13 @@ SSH_ENV="$HOME/.ssh/agent-environment"
 # plugins=(git)
 
 # syntax highlighting
-if [ -d "/usr/share/zsh-syntax-highlighting" ]; then
-	source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -d "/usr/share/zsh/plugins/zsh-syntax-highlighting" ]; then
+	source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# autosuggestion
+if [ -d "/usr/share/zsh/plugins/zsh-autosuggestions" ]; then
+	source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # add .local/bin to PATH for pip executables

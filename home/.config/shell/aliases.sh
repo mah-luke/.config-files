@@ -6,7 +6,7 @@ alias sem='cd $HOME/OneDrive-TU/Uni/7.Semester'
 
 # ---- application ---
 alias v="nvim"
-alias clip="xsel -b"
+alias clip="xclip -selection c"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -26,6 +26,3 @@ alias update="sudo rm -rf /var/lib/dpkg/lock-frontend &&
                 sudo apt-get dist-upgrade -y &&
                 sudo apt-get autoremove -y &&
                 sudo apt-get autoclean -y"
-
-eval '$(thefuck --alias)'
-eval '$(thefuck --alias FUCK)'
