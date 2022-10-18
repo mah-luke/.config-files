@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # XDG Variables
 export XDG_RUNTIME_DIR="/run/user/$UID"
