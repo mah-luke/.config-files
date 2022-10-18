@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# XDG Variables
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+
 # add keyring / ssh key support
 SSH_AUTH_SOCK=/run/user/"$(id -u)"/keyring/ssh
 export SSH_AUTH_SOCK
