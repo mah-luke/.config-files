@@ -1,5 +1,14 @@
 # Runs every start of zsh
 
+setopt nobeep
+setopt AUTO_CD
+
+
+# Directory stack
+DIRSTACKSIZE="20"
+setopt AUTO_PUSHD PUSHD_SILENT PUSHD_MINUS PUSHD_TO_HOME PUSHD_IGNORE_DUPS
+
+
 # Enable colors
 autoload -U colors && colors
 
