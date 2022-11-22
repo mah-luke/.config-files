@@ -2,12 +2,13 @@
 
 
 # --- uni ---
-alias sem='cd $HOME/OneDrive-TU/Uni/7.Semester'
-alias bac='cd $HOME/OneDrive-TU/Uni/Bachelorarbeit'
+alias sem='cd $SEM'
+alias bac='cd $BAC'
 
 # ---- application ---
 alias v="nvim"
 alias clip="xclip -selection c"
+alias paste="clip -o"
 
 alias pdf-merge="gs -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf *"
 
@@ -21,3 +22,7 @@ alias .2="cd ../.."
 alias .3=".2 && cd .."
 alias .4=".3 && cd .."
 alias .5=".4 && cd .."
+
+
+alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
+alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"

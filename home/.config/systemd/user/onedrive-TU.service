@@ -1,5 +1,5 @@
 [Unit]
-Description=OneDrive Free Client for %i
+Description=OneDrive Free Client for lukas
 Documentation=https://github.com/abraunegg/onedrive
 After=network-online.target
 Wants=network-online.target
@@ -16,12 +16,10 @@ ProtectKernelTunables=true
 #ProtectKernelLogs=true
 ProtectControlGroups=true
 RestrictRealtime=true
-ExecStart=/usr/bin/onedrive --monitor --confdir=/home/%i/.config/onedrive/onedrive-PERS
-User=%i
-Group=users
+ExecStart=/usr/bin/onedrive --monitor --confdir=/home/lukas/.config/onedrive/onedrive-TU
 Restart=on-failure
 RestartSec=3
 RestartPreventExitStatus=3
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
