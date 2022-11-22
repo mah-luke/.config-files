@@ -23,6 +23,8 @@ alias .3=".2 && cd .."
 alias .4=".3 && cd .."
 alias .5=".4 && cd .."
 
+alias -g run="> /dev/null 2>&1"
+
 
 alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
 alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"
