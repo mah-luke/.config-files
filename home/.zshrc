@@ -55,6 +55,9 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# avoid vim mode on delete
+bindkey '^[[3~' delete-char # delete key. Find out with <^v + DELETE>.
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
@@ -90,14 +93,19 @@ if [ -d "/usr/share/zsh/plugins/zsh-autosuggestions" ]; then
 	source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # add .local/bin to PATH for pip executables
 export PATH=~/.local/bin:$PATH
-
-# Load aliases
-. $HOME/.config/shell/aliases.sh
+export PATH=~/.local/share/JetBrains/Toolbox/scripts:$PATH
 
 # Load environment
 . $HOME/.config/shell/environment.sh
+
+# Load aliases
+. $HOME/.config/shell/aliases.sh
 
 # Add to path
 export PATH=~/.config-files/scripts:$PATH
