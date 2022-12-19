@@ -133,10 +133,7 @@ load-module module-filter-apply
 
 ### Make some devices default
 #set-default-sink output
-#set-default-source input
-
-### Allow including a default.pa.d directory, which if present, can be used
-### for additional configuration snippets.
+#set-default-source inputload-module
 .nofail
 .include /etc/pulse/default.pa.d
 .include $HOME/.config/pulse/default.pa.d
@@ -144,3 +141,7 @@ load-module module-filter-apply
 # my plugins
 #load-module module-equalizer-sink
 #load-module module-dbus-protocol
+
+# splitting front / rear
+load-module module-remap-sink sink_name=speakers sink_properties="device.description='Speakers'" remix=no master=alsa_output.pci-0000_1e_00.3.analog-stereo channels=2 master_channel_map=front-left,front-right channel_map=front-left,front-right
+load-module module-remap-sink sink_name=headphones sink_properties="device.description='Headphones'" remix=no master=alsa_output.pci-0000_1e_00.3.analog-stereo channels=2 master_channel_map=rear-left,rear-right channel_map=front-left,front-right
