@@ -93,7 +93,7 @@ if [ -d "/usr/share/zsh/plugins/zsh-autosuggestions" ]; then
 	source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # add .local/bin to PATH for pip executables
 export PATH=~/.local/bin:$PATH
