@@ -2,3 +2,7 @@
 
 ## pyscaffold package, used for python proj setup:
 putup <proj_name> 
+
+
+# XCOM 2:
+sudo pacman -S ibxcrypt-compat
