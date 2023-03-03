@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 # --- uni ---
 alias sem='cd $SEM'
 alias bac='cd $BAC'
@@ -25,6 +24,9 @@ alias .5=".4 && cd .."
 
 alias -g run="> /dev/null 2>&1"
 
+## muscle memory
+alias cat="bat"
+alias du="ncdu"
 
 alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
 alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"

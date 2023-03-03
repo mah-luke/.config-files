@@ -18,3 +18,5 @@ export BAC="$HOME"/OneDrive-TU/Uni/Bachelorarbeit
 
 export sse_pw=abebohw5EeWietha6soK
 export sse=~/Programming/uni/sse/Sec4SystemsEngineering_lab1
+
+export ws=~/Programming/code-workspaces
