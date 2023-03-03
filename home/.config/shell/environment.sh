@@ -13,7 +13,7 @@ export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
 
-export SEM="$HOME"/OneDrive-TU/Uni/7.Semester
+export SEM="$HOME"/OneDrive-TU/Uni/8.Semester
 export BAC="$HOME"/OneDrive-TU/Uni/Bachelorarbeit
 
 export sse_pw=abebohw5EeWietha6soK
