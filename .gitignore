@@ -1,2 +1,2 @@
-default.target.wants
+*.targets.wants
 hosts
