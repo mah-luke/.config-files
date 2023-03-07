@@ -1,9 +1,5 @@
-# Runs every start of  display manager
+# Runs every start of display manager
 
 # set mic vol 100%
 pactl set-source-volume alsa_input.usb-USB_MICROPHONE_USB_MICROPHONE_20190809-00.analog-stereo 100%
 pactl set-source-volume alsa_output.pci-0000_1e_00.3.analog-stereo.monitor 100%
- 
-# noisetorch
-sleep 5 && noisetorch -i alsa_input.usb-USB_MICROPHONE_USB_MICROPHONE_20190809-00.analog-stereo -t 75 &
-
