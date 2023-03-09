@@ -1,110 +1,101 @@
-# Runs every start of zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-setopt nobeep
-setopt AUTO_CD
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Directory stack
-DIRSTACKSIZE="20"
-setopt AUTO_PUSHD PUSHD_SILENT PUSHD_MINUS PUSHD_TO_HOME PUSHD_IGNORE_DUPS
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# Enable colors
-autoload -U colors && colors
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# ls aliases
-alias ll='ls -AlF'
-alias la='ls -A'
-alias l='ls -CF'
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# History
-HISTFILE=~/.cache/zsh/history
-HISTSIZE=1000
-SAVEHIST=1000
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-fpath+=~/.zfunc
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-# Basic auto/tab completion
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-# case-insensitive autocompletion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots) # Include hidden files.
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# avoid vim mode on delete
-bindkey '^[[3~' delete-char # delete key. Find out with <^v + DELETE>.
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select() {
-    case $KEYMAP in
-    vicmd) echo -ne '\e[1 q' ;;        # block
-    viins | main) echo -ne '\e[5 q' ;; # beam
-    esac
-}
-# zle -N zle-keymaphip init zsh)"-init
-echo -ne '\e[5 q'                # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-autoload -Uz promptinit
-promptinit
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
-# gpg pinentry
-export GPG_TTY=$(tty)
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-SSH_ENV="$HOME/.ssh/agent-environment"
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-# plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
-# syntax highlighting
-if [ -d "/usr/share/zsh/plugins/zsh-syntax-highlighting" ]; then
-    source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
+# User configuration
 
-# autosuggestion
-if [ -d "/usr/share/zsh/plugins/zsh-autosuggestions" ]; then
-    source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# add .local/bin to PATH for pip executables
-export PATH=~/.local/bin:$PATH
-export PATH=~/.local/share/JetBrains/Toolbox/scripts:$PATH
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# Load environment
-. $HOME/.config/shell/environment.sh
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# Load aliases
-. $HOME/.config/shell/aliases.sh
-
-# Add to path
-export PATH=~/.config-files/scripts:$PATH
-
-# Starship prompt
-eval "$(starship init zsh)"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
