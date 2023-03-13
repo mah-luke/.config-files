@@ -30,3 +30,8 @@ alias du="ncdu"
 
 alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
 alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"
+
+## git
+
+alias gitlogl="git log --oneline --graph --color --all --decorate"
+alias gitlog="git log --graph --color --all --decorate"
