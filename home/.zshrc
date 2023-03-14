@@ -71,7 +71,11 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    autoswitch_virtualenv
     git
+    thefuck
+    z
+    zsh-syntax-highlighting # keep at end
 )
 
 source $ZSH/oh-my-zsh.sh
