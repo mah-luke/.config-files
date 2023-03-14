@@ -75,6 +75,7 @@ plugins=(
     git
     thefuck
     z
+    zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
 )
 
