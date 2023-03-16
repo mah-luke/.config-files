@@ -22,9 +22,9 @@ alias .3=".2 && cd .."
 alias .4=".3 && cd .."
 alias .5=".4 && cd .."
 
-alias -g run="> /dev/null 2>&1"
+alias -g runcmd="> /dev/null 2>&1"
 
-## muscle memory
+# ## muscle memory
 alias cat="bat"
 alias du="ncdu"
 
