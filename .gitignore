@@ -1,2 +1,5 @@
-*.targets.wants
 hosts
+
+**/onedrive-*/*
+
+**/*.target.wants/
