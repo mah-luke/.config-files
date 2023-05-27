@@ -6,7 +6,7 @@ sudo pacman -S networkmanager
 systemctl enable --now NetworkManager.service
 
 # check running
-systemct status NetworkManager.service
+systemctl status NetworkManager.service
 
 # install openconnect
 sudo pacman -S networkmanager-openconnect
