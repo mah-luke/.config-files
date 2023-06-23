@@ -2,6 +2,13 @@
 
 # XDG Variables
 export XDG_RUNTIME_DIR="/run/user/$UID"
+export XDG_CONFIG_HOME="~/.config"
+export XDG_CACHE_HOME="~/.cache"
+export XDG_DATA_HOME="~/.local/share"
+export XDG_STATE_HOME="~/.local/state"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 
 # add keyring / ssh key support
