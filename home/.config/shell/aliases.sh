@@ -26,7 +26,7 @@ alias -g runcmd="> /dev/null 2>&1"
 
 # ## muscle memory
 alias cat="bat"
-alias du="ncdu"
+# alias du="ncdu"
 
 alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
 alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"
