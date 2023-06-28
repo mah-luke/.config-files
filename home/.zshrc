@@ -1,7 +1,7 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [ "${PATH}#"$HOME/.local/bin"}" = "$PATH" ]; then
+   export PATH=$HOME/.local/bin:$PATH
+fi
 
-export XDG_CONFIG_HOME=$HOME/.config
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -116,12 +116,6 @@ fi
 # fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
-
-export PATH=~/.local/bin:$PATH
-
-# Load environment
-. $HOME/.config/shell/environment.sh
 
 # Load aliases
 . $HOME/.config/shell/aliases.sh
