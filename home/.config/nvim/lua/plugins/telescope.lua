@@ -28,7 +28,7 @@ return {
         function()
           require("telescope.builtin").find_files({
             prompt_title = "Find Dotfiles",
-            cwd = "~/.dotfiles",
+            cwd = "~/.config-files",
           })
         end,
         desc = "Find Dotfiles",
