@@ -1,0 +1,35 @@
+[user]
+   email = lukas.mah@outlook.at
+   name = Lukas
+   signingkey = lukas.mah@outlook.at
+[pull]
+   rebase = true
+[core]
+   autocrlf = input
+   pager = delta
+[filter "lfs"]
+   smudge = git-lfs smudge -- %f
+   process = git-lfs filter-process
+   required = true
+   clean = git-lfs clean -- %f
+[filter "nbstripout"]
+   clean = \"/home/lukas/.pyenv/versions/3.10.8/bin/python3.10\" -m nbstripout
+   smudge = cat
+[diff "ipynb"]
+   textconv = \"/home/lukas/.pyenv/versions/3.10.8/bin/python3.10\" -m nbstripout -t
+[commit]
+   gpgsign = true
+   verbose = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+   navigate = true    # use n and N to move between diff sections
+   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+   conflictstyle = diff3
+[diff]
+   colorMoved = default
+[push]
+   autoSetupRemote = true
+[tag]
+   gpgSign = true
