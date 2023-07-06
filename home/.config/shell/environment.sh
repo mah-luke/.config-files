@@ -24,3 +24,13 @@ export sse_pw=abebohw5EeWietha6soK
 export sse=~/Programming/uni/sse/Sec4SystemsEngineering_lab1
 
 export ws=~/Programming/code-workspaces
+
+# --- fzf
+export FZF_DEFAULT_COMMAND="fd --follow --hidden"
+export FZF_DEFAULT_OPTS="--layout=reverse --multi --bind ctrl-f:preview-down,ctrl-b:preview-up"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '[ -f {} ] \
+&& bat --style=numbers --color=always {} \
+|| tree -a -C -L 1 {}'"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
