@@ -31,12 +31,13 @@ return {
             -- \ 'options' : [
             -- \   '-verbose',
             -- \   '-file-line-error',
-            -- \   '-synctex=1',
+            -- \   '-syn:
             -- \   '-interaction=nonstopmode',
             -- \ ],
          }
+         vim.g.vimtex_view_method = "zathura"
          vim.g.vimtex_view_general_viewer = "zathura" -- :h vimtex-view-zathura
-         -- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
+         -- vim.g.latex_view_general_options=shellescape("--synctex-forward" . '".exepath(v:progpath).' --servername '.v:servername.' +{%lline} {%ffile}"')
       end,
    },
 }
