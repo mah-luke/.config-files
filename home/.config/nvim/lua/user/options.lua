@@ -1,6 +1,6 @@
 -- Options
 
-local indentsize = 3
+local indentsize = 4
 
 -- Special Characters
 vim.g.mapleader = " "
@@ -34,4 +34,4 @@ vim.opt.termguicolors = true -- Enable 24-bit RGB color
 -- vim.opt.timeoutlen = 500 -- Time in ms to wait for mapped sequence to complete TODO: delete?
 vim.opt.undofile = true -- Save undo history
 vim.opt.wildmode = "full:longest,full,full" -- Completion mode TODO: What wildmode do I want?
-vim.opt.wrap = false
+vim.opt.wrap = true
