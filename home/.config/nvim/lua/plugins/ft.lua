@@ -35,7 +35,7 @@ return {
             -- \   '-interaction=nonstopmode',
             -- \ ],
          }
-         vim.g.vimtex_view_general_viewer = "zathura"
+         vim.g.vimtex_view_general_viewer = "zathura" -- :h vimtex-view-zathura
          -- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
       end,
    },
