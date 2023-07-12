@@ -1,12 +1,10 @@
 -- Options
 
-local indentsize = 3
-
+local indentsize = 4
 
 -- Special Characters
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 
 -- `:help options`
 -- Compact list under `:help option-list`
@@ -14,7 +12,7 @@ vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.completeopt = { "menuone", "noselect" } -- Insert mode comlete options
 vim.opt.cursorline = true -- Highlight text line of cursor line TODO: set false?
 vim.opt.expandtab = true -- Expand tabs into spaces
-vim.opt.formatoptions = "ro/qnlj" -- Default "tcqj" TODO: n not working?
+vim.opt.formatoptions = "ro/qnlj" -- use <c-u> to undo automated comment insertion for new line
 vim.opt.ignorecase = true -- Ignore case in search
 vim.opt.mouse = "a" -- Enable mouse support
 vim.opt.number = true -- Print line number
@@ -36,4 +34,4 @@ vim.opt.termguicolors = true -- Enable 24-bit RGB color
 -- vim.opt.timeoutlen = 500 -- Time in ms to wait for mapped sequence to complete TODO: delete?
 vim.opt.undofile = true -- Save undo history
 vim.opt.wildmode = "full:longest,full,full" -- Completion mode TODO: What wildmode do I want?
-vim.opt.wrap = true -- Line wrap TODO: delete? --> default
+vim.opt.wrap = true

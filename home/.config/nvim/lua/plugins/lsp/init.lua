@@ -31,13 +31,6 @@ return {
             runtime = { version = "LuaJIT" },
             diagnostics = {
               globals = {
-                -- awesomewm
-                "awesome",
-                "client",
-                "root",
-                "screen",
-                "tag",
-                -- neovim
                 "vim",
               },
             },
@@ -59,6 +52,8 @@ return {
         flags = lsp_conf.lsp_flags,
         on_attach = lsp_conf.on_attach,
       })
+
+      -- Rust
     end,
   },
   {

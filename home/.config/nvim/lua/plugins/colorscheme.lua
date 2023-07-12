@@ -3,20 +3,19 @@
 -- TODO: replace with https://github.com/rebelot/kanagawa.nvim?
 
 -- TODO: comments more contrast
--- TODO: background darker
 
 return {
    "navarasu/onedark.nvim",
    lazy = false,
    priority = 1000,
    config = function()
-      require('onedark').setup {
-         style = 'darker',
+      require("onedark").setup({
+         style = "darker",
          code_style = {
-            comments = 'none'
+            comments = "none",
          },
-         transparent = true
-      }
+         transparent = true,
+      })
       vim.cmd.colorscheme("onedark")
    end,
 }

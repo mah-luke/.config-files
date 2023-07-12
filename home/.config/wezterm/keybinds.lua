@@ -101,7 +101,7 @@ return {
       { key = "p", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
       { key = "r", mods = "SHIFT|CTRL", action = act.ReloadConfiguration },
       { key = "t", mods = "SHIFT|CTRL", action = act.SpawnTab("CurrentPaneDomain") },
-      { key = "u", mods = "CTRL", action = act.ShowLauncher },
+      { key = "u", mods = "CTRL|ALT", action = act.ShowLauncher },
       {
          key = "u",
          mods = "SHIFT|CTRL",

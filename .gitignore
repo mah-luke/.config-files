@@ -3,3 +3,4 @@ hosts
 **/onedrive-*/*
 
 **/*.target.wants/
+lazy-lock.json

@@ -24,18 +24,25 @@ alias .5=".4 && cd .."
 
 alias -g runcmd="> /dev/null 2>&1 &!"
 
-# ## muscle memory
+# muscle memory
 alias cat="bat"
 # alias du="ncdu"
 
 alias synctu="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-TU --synchronize"
 alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --synchronize"
 
-## git
-
+# git
 alias gs="git status"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gitlogl="git log --oneline --graph --color --all --decorate"
 alias gitlog="git log --graph --color --all --decorate"
 alias gs="git status"
+
+# pacman
+alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias explicit-installed='pacman -Qqen | grep -vx "$(pacman -Qqg texlive gnome)"'
+
+# paru
+alias pacs="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
