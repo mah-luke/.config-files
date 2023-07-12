@@ -35,7 +35,7 @@ alias syncpers="onedrive --confdir=/home/lukas/.config/onedrive/onedrive-PERS --
 alias gs="git status"
 alias gc="git commit"
 alias gcm="git commit -m"
-alias gitlogl="git log --oneline --graph --color --all --decorate"
+alias gitlogl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate"
 alias gitlog="git log --graph --color --all --decorate"
 alias gs="git status"
 
