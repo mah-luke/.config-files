@@ -44,6 +44,9 @@ return {
         -- https://github.com/goerz/jupytext.vim
         -- jupytext: render .ipynb as markdown
         "goerz/jupytext.vim",
-        event = { "BufReadPost", "BufNewFile" },
+        config = function()
+            vim.g.jupytext_fmt = "py:percent"
+        end,
+        -- event = { "BufReadPost", "BufNewFile" }, -- TODO: optimize loading of jupytext
     },
 }
