@@ -12,14 +12,14 @@ config.window_background_opacity = 0.99
 
 config.colors = {
    foreground = "#AFB5C1", -- default: #abb2bf
-   background = "#161a1d", -- default: #282c34
+   background = "#181a1f", -- default: #282c34
 
    -- Overrides the cell background color when the current cell is occupied by the
    -- cursor and the cursor style is set to Block
    -- cursor_bg = "hsl(219, 14%, 30%)",
    -- Overrides the text color when the current cell is occupied by the cursor
    cursor_fg = "#AFB5C1",
-   cursor_bg = "hsl(220, 17%, 35%)",
+   cursor_bg = "hsl(220, 14%, 35%)",
    -- Specifies the border color of the cursor when the cursor style is set to Block,
    -- or the color of the vertical or horizontal bar when the cursor style is set to
    -- Bar or Underline.
