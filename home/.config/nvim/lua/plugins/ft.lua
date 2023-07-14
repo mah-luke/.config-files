@@ -43,7 +43,13 @@ return {
     {
         -- https://github.com/goerz/jupytext.vim
         -- jupytext: render .ipynb as markdown
+        -- TODO: Has to open another file otherwise ipynb not rendered as py
         "goerz/jupytext.vim",
+        -- ft = "json",
+        config = function()
+            vim.g.jupytext_fmt = "py:percent"
+            -- vim.g.jupytext_filetype_map = { py = "python"}
+        end,
         event = { "BufReadPost", "BufNewFile" },
     },
 }
