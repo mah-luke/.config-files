@@ -29,9 +29,7 @@ return {
     {
         "sindrets/diffview.nvim",
         event = { "BufReadPre", "BufNewFile" },
-        opts = {
-            a = 10,
-        },
+        opts = {},
     },
 
     -- keymaps for commenting
