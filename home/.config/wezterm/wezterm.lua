@@ -7,7 +7,7 @@ local keybinds = require("keybinds")
 local config = wezterm.config_builder()
 
 -- visuals
-config.color_scheme = "Tomorrow (dark) (terminal.sexy)"
+config.color_scheme = "Default Dark (base16)"
 config.window_background_opacity = 0.99
 
 -- config.colors = {

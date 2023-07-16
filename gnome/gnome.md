@@ -1,3 +1,5 @@
+## dconf
+
 Export dconf settings (gsetting)
 
 > dconf dump / > dconf_settings.ini
@@ -5,3 +7,6 @@ Export dconf settings (gsetting)
 Import dconf settings:
 
 > dconf load / < dconf_settings.ini
+
+# gtk themes
+

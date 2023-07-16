@@ -18,7 +18,7 @@ return {
             "pyright", -- LSP
             "debugpy", -- DAP
             "black", -- formatter
-            "flake8", -- linter
+            "flake8", -- linter TODO: ask frank about why null-ls needed
             "mypy", -- linter
             -- Shell
             "shellcheck", -- linter

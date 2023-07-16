@@ -1,31 +1,18 @@
--- Colorscheme OneDark
--- https://github.com/navarasu/onedark.nvim
--- TODO: replace with https://github.com/rebelot/kanagawa.nvim?
-
--- TODO: comments more contrast
+-- Colorscheme base16
+-- https://github.com/RRethy/nvim-base16
 
 return {
-    "navarasu/onedark.nvim",
+    "RRethy/nvim-base16",
     lazy = false,
     priority = 1000,
     config = function()
-        require("onedark").setup({
-            -- style = "darker",
-            code_style = {
-                comments = "none",
-            },
-            transparent = true,
-            -- term_colors = true,
-            highlights = {
-                CursorLine = {
-                    bg = "#1c1f24", --"#181a1f",
-                },
-            },
-            -- colors = {
-            --    grey = "red",
-            -- },
-        })
-        vim.cmd.colorscheme("onedark")
-        vim.api.nvim_set_hl(0, "MatchParen", { bg = "#24282f", undercurl = true })
+        -- require("base16-colorscheme").setup({
+        --     -- code_style = {
+        --     --     comments = "none",
+        --     -- },
+        --     -- transparent = true,
+        -- })
+        vim.cmd.colorscheme("base16-default-dark")
+        vim.api.nvim_set_hl(0, "TSComment", { italic = false })
     end,
 }
