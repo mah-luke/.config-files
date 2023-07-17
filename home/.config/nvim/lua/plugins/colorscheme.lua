@@ -1,18 +1,18 @@
 -- Colorscheme base16
 -- https://github.com/RRethy/nvim-base16
 
+local function update_hl(group, tbl)
+    local old_hl = vim.api.nvim_get_hl_by_name(group, true)
+    local new_hl = vim.tbl_extend("force", old_hl, tbl)
+    vim.api.nvim_set_hl(0, group, new_hl)
+end
+
 return {
     "RRethy/nvim-base16",
     lazy = false,
     priority = 1000,
     config = function()
-        -- require("base16-colorscheme").setup({
-        --     -- code_style = {
-        --     --     comments = "none",
-        --     -- },
-        --     -- transparent = true,
-        -- })
         vim.cmd.colorscheme("base16-default-dark")
-        vim.api.nvim_set_hl(0, "TSComment", { italic = false })
+        update_hl("TSComment", { italic = false })
     end,
 }
