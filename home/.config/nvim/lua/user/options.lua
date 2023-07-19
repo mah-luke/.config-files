@@ -35,3 +35,4 @@ vim.opt.termguicolors = true -- Enable 24-bit RGB color
 vim.opt.undofile = true -- Save undo history
 vim.opt.wildmode = "full:longest,full,full" -- Completion mode TODO: What wildmode do I want?
 vim.opt.wrap = true
+vim.opt.linebreak = true
