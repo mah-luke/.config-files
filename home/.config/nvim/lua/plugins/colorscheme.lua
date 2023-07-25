@@ -15,6 +15,6 @@ return {
         vim.cmd.colorscheme("base16-default-dark")
         update_hl("TSComment", { italic = false })
         -- update_hl("LspInlayHint", { italic = false })
-        update_hl("TreesitterContext", { italic = false })
+        -- update_hl("TreesitterContext", { italic = false })
     end,
 }
