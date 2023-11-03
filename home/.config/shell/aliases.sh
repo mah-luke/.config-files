@@ -40,9 +40,11 @@ alias gitlog="git log --graph --color --all --decorate"
 alias gs="git status"
 
 # pacman
-alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+# alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias pacs='pacman -Slq | fzf --preview "pacman -Si {}" | xargs -ro sudo pacman -S'
+alias pacsi='pacman -Slq | fzf --preview "pacman -Si {}" | xargs -ro pacman -Si'
+alias pacq='pacman -Qq | fzf --preview "pacman -Qi {}" | xargs -ro pacman -Qi'
 alias explicit-installed='pacman -Qqen | grep -vx "$(pacman -Qqg texlive gnome)"'
-
-# paru
-alias pacs="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
+alias mirror='sudo reflector --verbose --latest 8 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
+alias aurs='paru -Slq | fzf --preview "paru -Si {}" | xargs -ro paru -S'
