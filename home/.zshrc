@@ -77,7 +77,6 @@ plugins=(
     git
     thefuck
     z
-    thefuck
     zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
 )
@@ -126,4 +125,6 @@ zstyle ':completion:*' menu select
 # case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
