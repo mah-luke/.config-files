@@ -6,6 +6,9 @@ local indentsize = 4
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- filetype
+vim.g.tex_flavor = "latex" -- `:help ft-tex-plugin`
+
 -- `:help options`
 -- Compact list under `:help option-list`
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard

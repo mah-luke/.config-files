@@ -20,6 +20,7 @@ return {
         -- pacman -S zathura xdotools
         "lervag/vimtex",
         ft = "tex",
+        lazy = false,
         config = function()
             vim.g.vimtex_compiler_latexmk = {
                 aux_dir = "aux",
