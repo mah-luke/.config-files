@@ -2,6 +2,17 @@
 -- https://github.com/neovim/nvim-lspconfig
 -- https://github.com/jose-elias-alvarez/null-ls.nvim
 -- https://github.com/mfussenegger/nvim-jdtls
+-- https://github.com/barreiroleo/ltex_extra.nvim
+
+-- Spell dict for LaTeX
+local function words()
+    local result = {}
+    local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+    for word in io.open(path, "r"):lines() do
+        table.insert(result, word)
+    end
+    return result
+end
 
 return {
     {
@@ -60,6 +71,9 @@ return {
                 settings = {
                     ltex = {
                         language = "en-US",
+                        dictionary = {
+                            ["en-US"] = words() or {},
+                        }
                     },
                 },
                 capabilities = lsp_conf.capabilities,
