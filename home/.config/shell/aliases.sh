@@ -9,7 +9,7 @@ alias v="nvim"
 alias clip="xclip -selection c"
 alias paste="clip -o"
 
-alias pdf-merge="gs -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf *"
+alias pdf-merge="ghostscript -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf *"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -48,3 +48,6 @@ alias pacq='pacman -Qq | fzf --preview "pacman -Qi {}" | xargs -ro pacman -Qi'
 alias explicit-installed='pacman -Qqen | grep -vx "$(pacman -Qqg texlive gnome)"'
 alias mirror='sudo reflector --verbose --latest 8 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
 alias aurs='paru -Slq | fzf --preview "paru -Si {}" | xargs -ro paru -S'
+
+# misc
+alias get-pdfs="mkdir pdfs && find ./ -type f -exec cp {} -t pdfs \;"
