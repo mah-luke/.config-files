@@ -1,4 +1,6 @@
 # Setup of TUWIEN mail account on Exchange
+c.f. https://wiki.gnome.org/Apps/Evolution/EWS/OAuth2
+
 
 Use URL:
 > https://outlook.office365.com/EWS/Exchange.asmx
