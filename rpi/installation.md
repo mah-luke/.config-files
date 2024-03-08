@@ -24,9 +24,12 @@ wget https://mirror.archlinuxarm.org/aarch64/core/linux-rpi-<version>.pkg.tar.xz
 tar xf linux-rpi-<version>.pkg.tar.xz --directory=<tmp-dir>
 cp -rf <tmp-dir>/boot/* /mnt/root/boot/
 ```
-Patching is finished, remove the SD card:
+Patching is finished, remove the SD card after:
 
 ```shell
 sync && umount -R /mnt/root
 ```
+Then follow the steps of the guide to get basic arch running.
 
+
+Follow the steps listed in (system setup)[./system_setup.md] to continue the configuration of the rpi.

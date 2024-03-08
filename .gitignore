@@ -4,3 +4,5 @@ hosts
 
 **/*.target.wants/
 lazy-lock.json
+
+tmp

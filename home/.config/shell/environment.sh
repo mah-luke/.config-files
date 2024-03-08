@@ -9,7 +9,7 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 
 # add keyring / ssh key support
-SSH_AUTH_SOCK=/run/user/"$(id -u)"/keyring/ssh
+SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/gcr/ssh
 export SSH_AUTH_SOCK
 
 # Use nvim as editor
