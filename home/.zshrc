@@ -75,7 +75,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     autoswitch_virtualenv
     git
-    thefuck
     z
     zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
