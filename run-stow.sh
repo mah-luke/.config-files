@@ -8,9 +8,8 @@ DIR="$(eval echo ~"${SUDO_USER}")/.config-files"
 git stash
 
 stow --dir="$DIR" --target="$HOME" home --adopt
-# sudo stow --dir="$DIR" --target=/etc etc --adopt
+sudo stow --dir="$DIR" --target=/etc etc --adopt
 sudo stow --dir="$DIR" --target=/usr usr --adopt
-
 
 # Remove changes caused by adopt
 git reset --hard
