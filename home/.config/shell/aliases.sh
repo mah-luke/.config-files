@@ -1,5 +1,7 @@
 #! /bin/sh
 
+alias notes='cd $NOTES'
+
 # --- uni ---
 alias sem='cd $SEM'
 alias bac='cd $BAC'

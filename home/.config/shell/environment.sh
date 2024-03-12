@@ -17,11 +17,9 @@ export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
 
-export SEM="$HOME"/OneDrive-TU/Uni/9.Semester
+export SEM="$HOME"/OneDrive-TU/Uni/SS2024
 export BAC="$HOME"/OneDrive-TU/Uni/Bachelorarbeit
-
-export sse_pw=abebohw5EeWietha6soK
-export sse=~/Programming/uni/sse/Sec4SystemsEngineering_lab1
+export NOTES=~/OneDrive/Dokumente_Cloud/Notes
 
 export ws=~/Programming/code-workspaces
 
