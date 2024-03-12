@@ -18,6 +18,5 @@ git stash apply
 
 # --- DEVICE SPECIFIC ---
 
-# needs fix:
-# load-module module-equalizer-sink
-# load-module module-dbus-protocol
+
+

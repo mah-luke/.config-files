@@ -7,3 +7,10 @@ only allow ssh keys, create `/etc/ssh/sshd_config.d/20-force_puclickey_auth.conf
 PasswordAuthentication no
 AuthenticationMethods publickey
 ```
+
+## SSH client
+
+enable ssh-agent:
+```bash
+systemctl --user enable --now ssh-agent.service
+```
