@@ -32,3 +32,6 @@ export FZF_CTRL_T_OPTS="--preview '[ -f {} ] \
 || tree -a -C -L 1 {}'"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
+
+# home
+export DESKTOP_MAC="00:d8:61:16:af:1f"

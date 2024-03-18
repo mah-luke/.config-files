@@ -51,5 +51,10 @@ alias explicit-installed='pacman -Qqen | grep -vx "$(pacman -Qqg texlive gnome)"
 alias mirror='sudo reflector --verbose --latest 8 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
 alias aurs='paru -Slq | fzf --preview "paru -Si {}" | xargs -ro paru -S'
 
+# Server setup
+alias sleepexit="systemctl suspend && exit"
+alias desktopwol='wol ${DESKTOP_MAC}'
+
+
 # misc
 alias get-pdfs="mkdir pdfs && find ./ -type f -exec cp {} -t pdfs \;"
