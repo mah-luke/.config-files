@@ -52,9 +52,8 @@ alias mirror='sudo reflector --verbose --latest 8 --sort rate --protocol https -
 alias aurs='paru -Slq | fzf --preview "paru -Si {}" | xargs -ro paru -S'
 
 # Server setup
-alias sleepexit="systemctl suspend && exit"
+alias suspendexit="systemctl suspend && exit"
 alias desktopwol='wol ${DESKTOP_MAC}'
-
 
 # misc
 alias get-pdfs="mkdir pdfs && find ./ -type f -exec cp {} -t pdfs \;"
