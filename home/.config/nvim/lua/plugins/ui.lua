@@ -35,10 +35,12 @@ return {
     -- https://github.com/lukas-reineke/indent-blankline.nvim
     {
         "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
         event = { "BufReadPost", "BufNewFile" },
-        opts = {
-            show_current_context = true,
-            show_current_context_start = true,
-        },
+        config = true,
+        -- opts = {
+        --     show_current_context = true,
+        --     show_current_context_start = true,
+        -- },
     },
 }
