@@ -5,15 +5,16 @@
 -- https://github.com/mfussenegger/nvim-dap-python
 
 return {
-  {
-    "mfussenegger/nvim-dap",
-    dependencies = {
-      {
-        "theHamsta/nvim-dap-virtual-text",
-        config = true,
-      },
-      "rcarriga/nvim-dap-ui",
-    },
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            {
+                "theHamsta/nvim-dap-virtual-text",
+                config = true,
+            },
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+        },
     -- stylua: ignore
     keys = {
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
@@ -30,27 +31,27 @@ return {
       { "<leader>du", function() require("dap").step_out() end, desc = "DAP Step Out" },
       { "<leader>dq", function() require("dap").terminate() end, desc = "DAP Quit" },
     },
-    config = function()
-      local dap = require("dap")
-      -- Set up  nvim-dap-ui
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end,
-  },
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    config = function()
-      require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
-    end,
-  },
+        config = function()
+            local dap = require("dap")
+            -- Set up  nvim-dap-ui
+            local dapui = require("dapui")
+            dapui.setup()
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close()
+            end
+        end,
+    },
+    {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        config = function()
+            require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
+        end,
+    },
 }

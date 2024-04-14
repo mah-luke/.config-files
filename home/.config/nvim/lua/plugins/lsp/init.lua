@@ -73,7 +73,7 @@ return {
                         language = "en-US",
                         dictionary = {
                             ["en-US"] = words() or {},
-                        }
+                        },
                     },
                 },
                 capabilities = lsp_conf.capabilities,
@@ -98,19 +98,19 @@ return {
         opts = function()
             local null_ls = require("null-ls")
             return {
-                on_attach = function(client, bufnr)
-                    if client.supports_method("textDocument/formatting") then
-                        local augroup = vim.api.nvim_create_augroup("LspFromatting", { clear = true })
-                        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                        vim.api.nvim_create_autocmd("BufWritePre", {
-                            group = augroup,
-                            buffer = bufnr,
-                            callback = function()
-                                vim.lsp.buf.format({ async = false })
-                            end,
-                        })
-                    end
-                end,
+                -- on_attach = function(client, bufnr)
+                -- if client.supports_method("textDocument/formatting") then
+                --     local augroup = vim.api.nvim_create_augroup("LspFromatting", { clear = true })
+                --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                --     vim.api.nvim_create_autocmd("BufWritePre", {
+                --         group = augroup,
+                --         buffer = bufnr,
+                --         callback = function()
+                --             vim.lsp.buf.format({ async = false })
+                --         end,
+                --     })
+                -- end
+                -- nd,
                 sources = {
                     -- lua
                     null_ls.builtins.formatting.stylua,
