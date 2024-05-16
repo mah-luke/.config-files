@@ -6,3 +6,5 @@ hosts
 lazy-lock.json
 
 tmp
+
+**/tmux/plugins
