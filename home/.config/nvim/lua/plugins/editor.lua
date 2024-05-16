@@ -49,4 +49,6 @@ return {
             require("illuminate").configure({})
         end,
     },
+
+    { "christoomey/vim-tmux-navigator" },
 }

@@ -8,21 +8,21 @@ return {
         opts = {
             ensure_installed = {
                 -- Java
-                "jdtls", -- LSP
+                "jdtls",            -- LSP
                 "java-debug-adapter", -- DAP
-                "java-test", -- DAP
+                "java-test",        -- DAP
                 -- Lua
                 "lua-language-server", -- LSP
-                "stylua", -- formatter
+                "stylua",           -- formatter
                 -- Python
-                "pyright", -- LSP
-                "debugpy", -- DAP
-                "black", -- formatter
-                "flake8", -- linter
-                "mypy", -- linter
+                "pyright",          -- LSP
+                "debugpy",          -- DAP
+                "black",            -- formatter
+                "flake8",           -- linter
+                "mypy",             -- linter
                 -- Shell
-                "shellcheck", -- linter
-                "shfmt", -- formatter
+                "shellcheck",       -- linter
+                "shfmt",            -- formatter
                 -- Rust
                 "rust-analyzer",
                 "codelldb",
