@@ -125,6 +125,12 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+#
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#
 
 
 eval "$(direnv hook zsh)"
