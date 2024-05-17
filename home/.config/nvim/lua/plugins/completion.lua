@@ -16,6 +16,8 @@ return {
     "saadparwaiz1/cmp_luasnip",
     -- pictograms
     "onsails/lspkind.nvim",
+    -- jupyter
+    "jmbuhr/otter.nvim"
   },
   opts = function()
     local cmp = require("cmp")
@@ -59,6 +61,7 @@ return {
         { name = "latex_symbols" },
         { name = "buffer" },
         { name = "path" },
+        { name = "otter" },
       },
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
