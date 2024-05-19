@@ -18,14 +18,21 @@ M.on_attach = function(client, bufnr)
         vim.keymap.set("v", keys, func, { buffer = bufnr, desc = desc })
     end
 
-    nmap("gd", vim.lsp.buf.definition, "Go to definition")
-    nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
-    nmap("gT", vim.lsp.buf.type_definition, "Type definition")
+    -- FIXME: Dirty fix to prevent overriding Otter/Quarto mappings
+    if vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "quarto" then
+        nmap("gd", vim.lsp.buf.definition, "Go to definition")
+        nmap("gt", vim.lsp.buf.type_definition, "Type definition")
+        nmap("K", vim.lsp.buf.hover, "Hover documentation")
+        nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
+        nmap("gr", vim.lsp.buf.references, "List references")
+        nmap("<leader>lf", function()
+            vim.lsp.buf.format({ async = true })
+        end, "Format current buffer")
+    end
 
-    nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
+
     nmap("<leader>ca", vim.lsp.buf.code_action, "Code action")
-
-    nmap("K", vim.lsp.buf.hover, "Hover documentation")
+    nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
     nmap("gi", vim.lsp.buf.implementation, "Go to implementation")
     nmap("<C-k>", vim.lsp.buf.signature_help, "Signature documentation")
 
@@ -35,11 +42,7 @@ M.on_attach = function(client, bufnr)
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, "Workspace list folders")
 
-    nmap("gr", vim.lsp.buf.references, "List references")
 
-  -- Prepend lsp keymaps with "<leader>l"
-  -- stylua: ignore
-  nmap("<leader>lf", function() vim.lsp.buf.format { async = true } end, "Format current buffer")
 
     if client.name == "jdtls" then
         -- See https://github.com/mfussenegger/nvim-jdtls
