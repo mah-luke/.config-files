@@ -23,4 +23,20 @@ Beware of the requirement for magick (the luarocks package) requires lua51
 
 See [reddit](https://www.reddit.com/r/neovim/comments/17ynpg2/how_to_edit_jupyter_notebooks_in_neovim_with_very/).
 
+### Remote connection:
+Start kernel on remote:
+```shell
+jupyter console --kernel <kernel-name> --ip <ip> -f ~/remote.json
+```
 
+then copy file to client:
+```shell
+scp 1.2.3.4:~/remote.json ./remote.json
+```
+
+And run inside neovim:
+```
+:MoltenInit remote.json
+```
+TODO: currently this approach does not work for dic lab, maybe go the jupyterhub route or forward all ports mentioned in the json?
+    There seems to exist the jupyter console --ssh=<ssh-name>  possibility, did not work for dic

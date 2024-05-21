@@ -64,13 +64,15 @@ return {
         },
     },
 
-
     {
         "GCBallesteros/jupytext.nvim",
         opts = {
             style = "markdown",
             output_extension = "md",
             force_ft = "markdown",
+            -- style = "hydrogen",
+            -- output_extension = "py",
+            -- force_ft = "python"
         },
     },
     {
@@ -81,14 +83,14 @@ return {
                 opts = {
                     handle_leading_whitespace = true,
                     lsp = {
-                        enabled = true,
+                        -- enabled = true,
                         hover = { border = "none" },
                     },
-                    diagnostic_update_events = {"BufWritePost"},
-                    buffers = {
-                        set_filetype = true,
-                        write_to_disk = false,
-                    },
+                    -- diagnostic_update_events = { "BufWritePost" },
+                    --     set_filetype = true,
+                    -- buffers = {
+                    --     write_to_disk = true,
+                    -- },
                 },
             },
             "nvim-cmp",
@@ -111,6 +113,7 @@ return {
                         enabled = true,
                     },
                 },
+                -- keymap only activated for quarto files, manually done in ftplugin/markdown.lua for md
                 keymap = {
                     hover = "K",
                     definition = "gd",
@@ -152,12 +155,10 @@ return {
     {
         "benlubas/molten-nvim",
         dependencies = { "3rd/image.nvim" },
-        dev = false,
         build = ":UpdateRemotePlugins",
         init = function()
             -- vim.g.molten_cover_empty_lines = true
             -- vim.g.molten_comment_string = "# %%"
-            vim.keymap.set({ "v", "n" }, "<leader><leader>R", "<Cmd>MoltenEvaluateVisual<CR>")
 
             -- vim.g.molten_auto_image_popup = true
             -- vim.g.molten_show_mimetype_debug = true
@@ -165,9 +166,9 @@ return {
             vim.g.molten_image_provider = "image.nvim"
             -- vim.g.molten_output_show_more = true
             -- vim.g.molten_output_win_border = { "", "━", "", "" }
-            vim.g.molten_output_win_max_height = 12
-            vim.g.molten_output_virt_lines = true
-            -- vim.g.molten_virt_text_output = true
+            vim.g.molten_output_win_max_height = 24
+            -- vim.g.molten_output_virt_lines = true
+            vim.g.molten_virt_text_output = true
             vim.g.molten_use_border_highlights = true
             vim.g.molten_virt_lines_off_by_1 = true
             vim.g.molten_wrap_output = true
@@ -181,8 +182,8 @@ return {
             vim.keymap.set("n", "<localleader>ip", function()
                 local venv = os.getenv("VIRTUAL_ENV")
                 if venv ~= nil then
-                    -- load jupyter kernel with the name of project root
-                    -- init kernel: python -m ipykernel --user --name <kernelname>
+                    -- load jupyter kernel with the name of project root dir
+                    -- init kernel: `python -m ipykernel --user --name <kernelname>`
                     venv = string.match(venv, "/.+/(.+)/.+")
                     vim.cmd(("MoltenInit %s"):format(venv))
                 else
@@ -205,6 +206,12 @@ return {
                     end, { desc = "run all cells of all languages", silent = true })
 
                     -- setup some molten specific keybindings
+                    vim.keymap.set(
+                        { "v", "n" },
+                        "<leader><leader>R",
+                        "<Cmd>MoltenEvaluateVisual<CR>",
+                        { desc = "Molten Evaluate visual in visual and normal mode", silent = true}
+                    )
                     vim.keymap.set(
                         "n",
                         "<localleader>ro",
