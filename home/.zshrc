@@ -132,7 +132,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 #
 
-export JAVA_HOME=/usr
+# export JAVA_HOME=/usr
 
 
 eval "$(direnv hook zsh)"
