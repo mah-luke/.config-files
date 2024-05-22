@@ -11,7 +11,9 @@
 -- HACK: asdf
 -- WARNING: asdf
 -- PERF: asdf
--- TEST: asd
+-- TEST: asdf
+-- XXX: asdf
+-- WARN: asdf
 
 return {
    "folke/todo-comments.nvim",

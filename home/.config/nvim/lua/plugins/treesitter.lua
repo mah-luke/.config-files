@@ -73,6 +73,7 @@ return {
                         ["]p"] = { query = "@parameter.inner", desc = "Jump to next parameter" },
                         ["]f"] = { query = "@function.outer", desc = "Jump to next function start" },
                         ["]c"] = { query = "@class.outer", desc = "Jump to next class start" },
+                        ["]b"] = { query = "@code_cell.inner", desc = "Jump to next code block" },
                     },
                     goto_next_end = {
                         ["]F"] = { query = "@function.outer", desc = "Jump to next function end" },
@@ -82,6 +83,7 @@ return {
                         ["[p"] = { query = "@parameter.inner", desc = "Jump to previous parameter" },
                         ["[f"] = { query = "@function.outer", desc = "Jump to previous function start" },
                         ["[c"] = { query = "@class.outer", desc = "Jump to previous class start" },
+                        ["[b"] = { query = "@code_cell.outer", desc = "Jump to previous code cell" },
                     },
                     goto_previous_end = {
                         ["[F"] = { query = "@function.outer", desc = "Jump to previous function end" },

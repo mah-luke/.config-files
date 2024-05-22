@@ -18,18 +18,14 @@ M.on_attach = function(client, bufnr)
         vim.keymap.set("v", keys, func, { buffer = bufnr, desc = desc })
     end
 
-    -- FIXME: Dirty fix to prevent overriding Otter/Quarto mappings
-    if vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "quarto" then
-        nmap("gd", vim.lsp.buf.definition, "Go to definition")
-        nmap("gt", vim.lsp.buf.type_definition, "Type definition")
-        nmap("K", vim.lsp.buf.hover, "Hover documentation")
-        nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
-        nmap("gr", vim.lsp.buf.references, "List references")
-        nmap("<leader>lf", function()
-            vim.lsp.buf.format({ async = true })
-        end, "Format current buffer")
-    end
-
+    nmap("gd", vim.lsp.buf.definition, "Go to definition")
+    nmap("gt", vim.lsp.buf.type_definition, "Type definition")
+    nmap("K", vim.lsp.buf.hover, "Hover documentation")
+    nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
+    nmap("gr", vim.lsp.buf.references, "List references")
+    nmap("<leader>lf", function()
+        vim.lsp.buf.format({ async = true })
+    end, "Format current buffer")
 
     nmap("<leader>ca", vim.lsp.buf.code_action, "Code action")
     nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
@@ -41,8 +37,6 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>wl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, "Workspace list folders")
-
-
 
     if client.name == "jdtls" then
         -- See https://github.com/mfussenegger/nvim-jdtls
@@ -65,23 +59,23 @@ M.on_attach = function(client, bufnr)
         require("jdtls.dap").setup_dap_main_class_configs()
     end
 
-    -- if client.name == "ltex" then
-    --     require("ltex_extra").setup({
-    --         load_langs = { "en-US" },
-    --         path = ".vscode",
-    --     })
-    -- end
+    if client.name == "ltex" then
+        require("ltex_extra").setup({
+            load_langs = { "en-US" },
+            path = ".vscode",
+        })
+    end
 
-    -- if client.supports_method("textDocument/formatting") then
-    --     vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
-    --     vim.api.nvim_create_autocmd("BufWritePre", {
-    --         group = group,
-    --         buffer = bufnr,
-    --         callback = function()
-    --             vim.lsp.buf.format({ async = false })
-    --         end,
-    --     })
-    -- end
+    if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = group,
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({ async = false })
+            end,
+        })
+    end
 end
 
 M.lsp_flags = {

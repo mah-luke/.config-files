@@ -6,7 +6,7 @@ return {
   event = "InsertEnter",
   dependencies = {
     -- luasnip
-    { "L3MON4D3/LuaSnip", version = "*" },
+    { "L3MON4D3/LuaSnip", version = "*", run = "make install_jsregexp" },
     -- completion plugins
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
@@ -37,6 +37,8 @@ return {
         ["<c-n>"] = cmp.mapping.select_next_item(),
         ["<c-b>"] = cmp.mapping.scroll_docs(-4),
         ["<c-f>"] = cmp.mapping.scroll_docs(4),
+        ["<c-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<c-u>"] = cmp.mapping.scroll_docs(4),
         ["<c-c>"] = cmp.mapping.complete(),
         ["<c-e>"] = cmp.mapping.abort(),
         ["<c-y>"] = cmp.mapping.confirm({ select = true }),

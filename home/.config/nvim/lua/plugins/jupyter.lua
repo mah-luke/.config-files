@@ -1,5 +1,13 @@
 -- Plugins to allow REPL in neovim
 -- Guide: https://github.com/benlubas/molten-nvim/blob/main/docs/Notebook-Setup.md
+--
+
+local function keys(str)
+    return function()
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(str, true, false, true), "m", true)
+    end
+end
+
 return {
     {
         -- see the image.nvim readme for more information about configuring this plugin
@@ -37,31 +45,35 @@ return {
     -- TODO: setup hydra
     {
         "nvimtools/hydra.nvim",
-        opts = {
-            name = "QuartoNavigator",
-            hint = [[
-              _j_/_k_: move down/up  _r_: run cell
-              _l_: run line  _R_: run above
-              ^^     _<esc>_/_q_: exit ]],
-            config = {
-                color = "pink",
-                invoke_on_body = true,
-                hint = {
-                    border = "rounded", -- you can change the border if you want
+        version = "*",
+        config = function()
+            local hydra = require("hydra")
+            hydra({
+                name = "QuartoNavigator",
+                hint = [[
+_j_/_k_: move down/up  _r_: run cell
+_l_: run line  _R_: run above
+^^     _<esc>_/_q_: exit ]],
+                config = {
+                    color = "pink",
+                    invoke_on_body = true,
+                    -- hint = {
+                    --     -- border = "rounded", -- you can change the border if you want
+                    -- },
                 },
-            },
-            mode = { "n" },
-            body = "<localleader>j", -- this is the key that triggers the hydra
-            heads = {
-                -- { "j", keys("]b") },
-                -- { "k", keys("[b") },
-                { "r", ":QuartoSend<CR>" },
-                { "l", ":QuartoSendLine<CR>" },
-                { "R", ":QuartoSendAbove<CR>" },
-                { "<esc>", nil, { exit = true } },
-                { "q", nil, { exit = true } },
-            },
-        },
+                mode = { "n" },
+                body = "<leader>j", -- this is the key that triggers the hydra
+                heads = {
+                    { "j", keys("]b") },
+                    { "k", keys("[b") },
+                    { "r", ":QuartoSend<CR>" },
+                    { "l", ":QuartoSendLine<CR>" },
+                    { "R", ":QuartoSendAbove<CR>" },
+                    { "<esc>", nil, { exit = true } },
+                    { "q", nil, { exit = true } },
+                },
+            })
+        end,
     },
 
     {
@@ -165,12 +177,12 @@ return {
             vim.g.molten_auto_open_output = false
             vim.g.molten_image_provider = "image.nvim"
             -- vim.g.molten_output_show_more = true
-            -- vim.g.molten_output_win_border = { "", "━", "", "" }
+            vim.g.molten_output_win_border = { "", "━", "", "" }
             vim.g.molten_output_win_max_height = 24
             -- vim.g.molten_output_virt_lines = true
             vim.g.molten_virt_text_output = true
-            vim.g.molten_use_border_highlights = true
-            vim.g.molten_virt_lines_off_by_1 = true
+            -- vim.g.molten_use_border_highlights = true
+            -- vim.g.molten_virt_lines_off_by_1 = true
             vim.g.molten_wrap_output = true
             vim.g.molten_tick_rate = 144
 
@@ -210,7 +222,7 @@ return {
                         { "v", "n" },
                         "<leader><leader>R",
                         "<Cmd>MoltenEvaluateVisual<CR>",
-                        { desc = "Molten Evaluate visual in visual and normal mode", silent = true}
+                        { desc = "Molten Evaluate visual in visual and normal mode", silent = true }
                     )
                     vim.keymap.set(
                         "n",
