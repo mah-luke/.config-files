@@ -31,7 +31,7 @@ return {
                 "gitignore",
                 "java",
                 "json",
-                "latex",
+                -- "latex",
                 "lua",
                 "markdown",
                 "markdown_inline",
