@@ -42,7 +42,6 @@ return {
         },
     },
 
-    -- TODO: setup hydra
     {
         "nvimtools/hydra.nvim",
         version = "*",
@@ -51,9 +50,9 @@ return {
             hydra({
                 name = "QuartoNavigator",
                 hint = [[
-_j_/_k_: move down/up  _r_: run cell
-_l_: run line  _R_: run above
-^^     _<esc>_/_q_: exit ]],
+    _j_/_k_: move down/up  _r_: run cell
+    _l_: run line  _R_: run above
+    ^^     _<esc>_/_q_: exit ]],
                 config = {
                     color = "pink",
                     invoke_on_body = true,

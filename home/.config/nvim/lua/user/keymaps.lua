@@ -1,5 +1,5 @@
 local map = function(mode, lhs, rhs, desc)
-  vim.keymap.set(mode, lhs, rhs, { desc = desc })
+    vim.keymap.set(mode, lhs, rhs, { desc = desc })
 end
 
 -- Navigate buffers
@@ -44,3 +44,6 @@ map("n", "<leader>bd", "<cmd>bn<cr><cmd>bd#<cr>", "Delete current buffer")
 map("n", "<leader>or", "<cmd>set invrelativenumber<cr>", "Toggle relativenumber")
 map("n", "<leader>os", "<cmd>set invspell<cr>", "Toggle spell")
 map("n", "<leader>ow", "<cmd>set invwrap<cr>", "Toggle wrap")
+
+-- Delete full word using Ctrl Backspace
+map("i", "<C-H>", "<Esc>cvb", "Delete full word")
