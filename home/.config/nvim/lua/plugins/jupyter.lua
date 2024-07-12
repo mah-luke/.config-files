@@ -12,7 +12,9 @@ return {
     {
         -- see the image.nvim readme for more information about configuring this plugin
         "3rd/image.nvim",
-        dependencies = { "luarocks.nvim" },
+        dependencies = {
+            "leafo/magick",
+        },
         opts = {
             backend = "kitty", -- whatever backend you would like to use
             max_width = 100,
@@ -31,14 +33,6 @@ return {
                     filetypes = { "markdown", "quarto" }, -- markdown extensions (ie. quarto) can go here
                 },
             },
-        },
-    },
-
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1001, -- this plugin needs to run before anything else
-        opts = {
-            rocks = { "magick" },
         },
     },
 
@@ -87,27 +81,44 @@ return {
         },
     },
     {
+        "jmbuhr/otter.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+        ft = { "quarto", "markdown" },
+        config = function(_, opts)
+            local otter = require("otter")
+            otter.setup(opts)
+        end,
+        opts = {
+            handle_leading_whitespace = true,
+            lsp = {
+                root_dir = function(_, bufnr)
+                    return vim.fs.root(bufnr or 0, {
+                        ".git",
+                        "_quarto.yml",
+                        "package.json",
+                    }) or vim.fn.getcwd(0)
+                end,
+                -- enabled = true,
+                -- hover = { border = "none" },
+                diagnostic_update_events = { "BufWritePost", "InsertLeave", "TextChanged" },
+            },
+            -- buffers = {
+            --   set_filetype = true,
+            --   write_to_disk = true,
+            -- },
+            verbose = false,
+        },
+    },
+    {
         "quarto-dev/quarto-nvim",
         dependencies = {
-            {
-                "jmbuhr/otter.nvim",
-                opts = {
-                    handle_leading_whitespace = true,
-                    lsp = {
-                        -- enabled = true,
-                        hover = { border = "none" },
-                    },
-                    -- diagnostic_update_events = { "BufWritePost" },
-                    --     set_filetype = true,
-                    -- buffers = {
-                    --     write_to_disk = true,
-                    -- },
-                },
-            },
+            "jmbuhr/otter.nvim",
             "nvim-cmp",
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
-            { "nvimtools/hydra.nvim" },
+            "nvimtools/hydra.nvim",
         },
         ft = { "quarto", "markdown" },
         config = function()
