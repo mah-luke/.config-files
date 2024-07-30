@@ -155,7 +155,7 @@ return {
     },
     {
         "barreiroleo/ltex_extra.nvim",
-        ft = { "markdown", "tex" },
+        ft = { "tex" },
         dependencies = { "neovim/nvim-lspconfig" },
     },
 }
