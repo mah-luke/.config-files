@@ -122,14 +122,6 @@ return {
                 vim.api.nvim_win_set_config(win, { zindex = 100 })
             end,
         },
-        init = function()
-            -- when noice is not enabled, install notify on VeryLazy
-            if not LazyVim.has("noice.nvim") then
-                LazyVim.on_very_lazy(function()
-                    vim.notify = require("notify")
-                end)
-            end
-        end,
     },
 
     {
@@ -150,5 +142,17 @@ return {
                 return package.loaded["nvim-web-devicons"]
             end
         end,
+    },
+
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        opts = function(_, opts)
+            opts.open_files_do_not_replace_types = opts.open_files_do_not_replace_types
+                or { "terminal", "Trouble", "qf", "Outline", "trouble" }
+            table.insert(opts.open_files_do_not_replace_types, "edgy")
+        end,
+        keys = {
+            { "<leader>e", "<Cmd>Neotree toggle<CR>", desc = "Toggle file manager" },
+        },
     },
 }
