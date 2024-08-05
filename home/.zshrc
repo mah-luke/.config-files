@@ -132,7 +132,9 @@ if [ -f '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/l
 if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 #
 
-# export JAVA_HOME=/usr
+# Device specific
+if [ -f '~/.config/shell/custom.sh' ]; then source '~/.config/shell/custom.sh'; fi
+
 
 
 eval "$(direnv hook zsh)"

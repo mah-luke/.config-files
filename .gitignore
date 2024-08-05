@@ -8,3 +8,5 @@ lazy-lock.json
 tmp
 
 **/tmux/plugins
+
+**/shell/custom.sh
