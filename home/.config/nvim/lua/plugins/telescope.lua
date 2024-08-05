@@ -41,7 +41,7 @@ return {
             vim.api.nvim_set_keymap(
                 "n",
                 "<Leader>fhf",
-                ':lua require"telescope.builtin".find_files({ hidden = true })<CR>',
+                ':lua require"telescope.builtin".find_files({ hidden = true, no_ignore = true, file_ignore_patterns = {".*.git.*"} })<CR>',
                 { noremap = true, silent = true }
             )
         end,

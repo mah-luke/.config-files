@@ -130,10 +130,11 @@ if [ -f '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/l
 #
 # # The next line enables shell command completion for gcloud.
 if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-#
 
 # Device specific
-if [ -f '~/.config/shell/custom.sh' ]; then source '~/.config/shell/custom.sh'; fi
+if [ -f '/home/lukas/.config/shell/custom.sh' ]; then
+    source '/home/lukas/.config/shell/custom.sh';
+fi
 
 
 
