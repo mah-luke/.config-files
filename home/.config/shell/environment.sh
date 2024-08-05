@@ -35,3 +35,7 @@ export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
 
 # home
 export DESKTOP_MAC="00:d8:61:16:af:1f"
+
+# tmux
+export TINTED_TMUX_OPTION_STATUSBAR=1
+# export TINTED_TMUX_OPTION_ACTIVE=1
