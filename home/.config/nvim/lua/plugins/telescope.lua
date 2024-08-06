@@ -23,7 +23,7 @@ return {
             { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope Find Help" },
             { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Telescope Find Keymaps" },
             { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Telescope Find Old Files" },
-            { "<leader>fc", "<cmd>Telescope command<cr>", desc = "[T]elescope Find [C]ommands" },
+            { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "[T]elescope Find [C]ommands" },
             { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "[T]elescop Find [D]iagnostics" },
             {
                 "<leader>fdf",
