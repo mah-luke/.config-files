@@ -79,6 +79,63 @@ return {
             -- output_extension = "py",
             -- force_ft = "python"
         },
+        config = function(_, config)
+            local jupytext = require("jupytext")
+            jupytext.setup(config)
+
+            vim.keymap.set(
+                "n",
+                "<localleader>cn",
+                [[i{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "eac18b0c",
+   "metadata": {
+    "lines_to_next_cell": 0
+   },
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "073a95f5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"Hello World\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "provenance": [],
+   "toc_visible": true
+  },
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}]],
+                { desc = "Create a new code cell", silent = true }
+            )
+        end,
     },
     {
         "jmbuhr/otter.nvim",
