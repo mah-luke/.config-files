@@ -25,3 +25,15 @@ export in rc file (e.g. .zshrc):
 ```bash
 export ${XDG_RUNTIME_DIR}/gcr/ssh
 ```
+
+
+## Evolution
+
+Password popups all the time: Just install seahorse, then saving to the keystore works
+for whatever reason.
+
+```bash
+sudo pacman -S seahorse
+```
+
+
