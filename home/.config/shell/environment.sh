@@ -33,8 +33,10 @@ export FZF_CTRL_T_OPTS="--preview '[ -f {} ] \
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
 
-# home
+# MAC adresses
 export DESKTOP_MAC="00:d8:61:16:af:1f"
+export HAMA_DISK="00:00:00:00:21:BE"
+
 
 # tmux
 export TINTED_TMUX_OPTION_STATUSBAR=1
