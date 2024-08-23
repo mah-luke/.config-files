@@ -1,13 +1,13 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
+    "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+        "hyprland/workspaces",
         "sway/mode",
         "sway/scratchpad",
         "custom/media"
@@ -35,21 +35,19 @@
     ],
 
     "hyprland/workspaces": {
-        "format": "{name}: {icon}",
+        "format": "{name}: {icon}", // "{name}: {icon}",
+        "all-outputs": true,
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+        // //     "1": "",
+        // //     "2": "",
+        // //     "3": "",
+        // //     "4": "",
+        // //     "5": "",
             "active": "",
             "default": ""
         },
-           // "persistent-workspaces": {
-           //       "*": 5, // 5 workspaces by default on every monitor
-           //       "HDMI-A-1": 3 // but only three on HDMI-A-1
-           // }
-    }
+        // "show-special": true,
+    },
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
