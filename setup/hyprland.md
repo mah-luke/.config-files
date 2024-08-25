@@ -7,3 +7,10 @@ Install hyprland and make sure following applications are installed:
 - wofi (application selection & running)
 - swww (wallpaper)
 - waybar (bar)
+- wl-clipboard (clipboard)
+
+
+## Clipboard
+
+
+

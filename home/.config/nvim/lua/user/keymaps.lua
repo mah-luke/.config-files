@@ -47,3 +47,11 @@ map("n", "<leader>ow", "<cmd>set invwrap<cr>", "Toggle wrap")
 
 -- Delete full word using Ctrl Backspace
 map("i", "<C-H>", "<Esc>cvb", "Delete full word")
+
+-- Clipboard
+map({ "n", "v" }, "<leader>y", '"+y', "Copy selection to clipboard")
+map({ "n", "v" }, "<leader>yy", '"+yy', "Copy line to clipboard")
+-- map({ "n", "v" }, "<leader>Y", '"+yg_', "Copy selection to clipboard without newline")
+
+map({ "n", "v" }, "<leader>p", '"+p', "Paste from clipboard")
+-- map({ "n", "v" }, "<leader>p", '"+P', "Paste from clipboard")

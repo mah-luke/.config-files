@@ -14,7 +14,7 @@ vim.g.python3_host_prog = "/usr/bin/python"
 
 -- `:help options`
 -- Compact list under `:help option-list`
-vim.opt.clipboard = "unnamedplus" -- Use system clipboard
+-- vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.completeopt = { "menuone", "noselect" } -- Insert mode comlete options
 vim.opt.cursorline = true -- Highlight text line of cursor line TODO: set false?
 vim.opt.expandtab = true -- Expand tabs into spaces
