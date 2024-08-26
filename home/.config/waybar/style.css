@@ -1,9 +1,9 @@
 @import "base16_colors.css";
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: Fira Code, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: 'FiraCode Nerd Font Reg';
     font-size: 13px;
+    font-weight: bold;
 }
 
 window#waybar {

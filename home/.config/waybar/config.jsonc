@@ -54,7 +54,13 @@
             "class<firefox> title<.*youtube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox> title<.*spotify.*>": "",
             "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            "class<kitty>": "",
+            "class<obsidian>": "",
+            "title<.*steam.*>": "󰓓",
+            "title<.*mtga.*>": "󱡄", // Magic the gathering
+            "title<.*launching.*>": "󰝲",
+            "class<evolution>": "",
+            "class<kitty>": "", //",
+            "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
         },
     },
@@ -179,7 +185,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "  {format_source}",
