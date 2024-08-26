@@ -8,8 +8,8 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
+        "hyprland/mode",
+        "hyprland/scratchpad",
         "custom/media"
     ],
     "modules-center": [
@@ -26,16 +26,16 @@
         "temperature",
         "backlight",
         "keyboard-state",
-        "sway/language",
+        // "hyprland/language",
         "battery",
         "battery#bat2",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"
+        // "custom/power"
     ],
 
     "hyprland/workspaces": {
-        "format": "{name}: {icon}", // "{name}: {icon}",
+        "format": " {windows} ", // "{name}: {icon}",
         "all-outputs": true,
         "format-icons": {
         // //     "1": "",
@@ -46,25 +46,18 @@
             "active": "",
             "default": ""
         },
-        // "show-special": true,
+        "show-special": true,
+        "special-visible-only": true,
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<firefox> title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "class<firefox> title<.*spotify.*>": "",
+            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<kitty>": "",
+            "title<.*nvim.*>": "",
+        },
     },
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -74,10 +67,10 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
+    "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
@@ -186,10 +179,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}   {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {

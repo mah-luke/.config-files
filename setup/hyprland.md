@@ -10,7 +10,21 @@ Install hyprland and make sure following applications are installed:
 - wl-clipboard (clipboard)
 
 
+## Font
+Make sure fontconfig is installed. Fira Code is used as default.
+Check default font using `fc-match`
+
 ## Clipboard
+Use cliphist as clipboard manager, neovim is setup to copy/paste on `leader[yp]`
+Open the clipboard history with `Super+v`
+
+
+## Lockscreen
+
+
+
+## waybar
+
 
 
 
