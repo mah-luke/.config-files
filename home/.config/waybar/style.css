@@ -73,6 +73,15 @@ button:hover {
     color: @base03;
 }
 
+#workspaces button.visible {
+    color: @base0F;
+}
+
+#workspaces button.focused {
+    background-color: @base08;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
 #workspaces button.active {
     /* background-color: @base08; */
     color: @base0A;
@@ -80,10 +89,6 @@ button:hover {
 }
 
 
-#workspaces button.focused {
-    background-color: @base05;
-    box-shadow: inset 0 -3px #ffffff;
-}
 
 #workspaces button.urgent {
     color: @base08;
