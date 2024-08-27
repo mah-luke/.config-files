@@ -47,7 +47,7 @@
             "default": ""
         },
         "persistent-workspaces": {
-            "*": 10
+            "*": 10,
         },
         "show-special": true,
         "special-visible-only": false,
@@ -65,7 +65,7 @@
             "class<kitty>": "", //",
             "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
-            ".*": "a"
+            "": ""
         },
     },
     "keyboard-state": {

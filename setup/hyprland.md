@@ -8,6 +8,7 @@ Install hyprland and make sure following applications are installed:
 - swww (wallpaper)
 - waybar (bar)
 - wl-clipboard (clipboard)
+- grim & slurp (screenshot)
 
 
 ## Font
