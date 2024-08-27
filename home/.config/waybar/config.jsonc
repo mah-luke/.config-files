@@ -24,11 +24,11 @@
         "cpu",
         "memory",
         "temperature",
-        "backlight",
+        // "backlight",
         "keyboard-state",
         // "hyprland/language",
         "battery",
-        "battery#bat2",
+        // "battery#bat2",
         "clock",
         "tray"
         // "custom/power"
@@ -46,8 +46,11 @@
             "active": "",
             "default": ""
         },
+        "persistent-workspaces": {
+            "*": 10
+        },
         "show-special": true,
-        "special-visible-only": true,
+        "special-visible-only": false,
         "window-rewrite-default": "",
         "window-rewrite": {
             "class<firefox>": "", // Windows whose classes are "firefox"
@@ -62,6 +65,7 @@
             "class<kitty>": "", //",
             "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
+            ".*": "a"
         },
     },
     "keyboard-state": {
