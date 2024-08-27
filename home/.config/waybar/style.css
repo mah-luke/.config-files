@@ -10,8 +10,7 @@
     font-weight: bold;
 }
 
-window#waybar {
-    background-color: @base01;
+window#waybar { background-color: @base01;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: @base07;
     transition-property: background-color;
@@ -75,16 +74,18 @@ button:hover {
 
 #workspaces button.visible {
     color: @base0F;
+    /* opacity: 0.5; */
 }
 
-#workspaces button.focused {
-    background-color: @base08;
-    box-shadow: inset 0 -3px #ffffff;
-}
+/* #workspaces button.focused { */
+/*     background-color: @base08; */
+/*     box-shadow: inset 0 -3px #ffffff; */
+/* } */
 
 #workspaces button.active {
     /* background-color: @base08; */
     color: @base0A;
+    /* opacity: 1; */
     /* background: @base0A; */
 }
 
