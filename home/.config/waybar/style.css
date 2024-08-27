@@ -69,11 +69,16 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
+#workspaces button.empty {
+    color: @base03;
+}
+
 #workspaces button.active {
     /* background-color: @base08; */
     color: @base0A;
     /* background: @base0A; */
 }
+
 
 #workspaces button.focused {
     background-color: @base05;
