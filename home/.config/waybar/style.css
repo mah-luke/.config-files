@@ -1,6 +1,6 @@
 @import "base16_colors.css";
 
-@define-color default_back @base01;
+@define-color default_back @base00;
 @define-color default_text @base07;
 
 
@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-window#waybar { background-color: @base01;
+window#waybar { background-color: @base00;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: @base07;
     transition-property: background-color;

@@ -78,6 +78,7 @@
             "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
             "class<discord>": "",
+            "class<vesktop>": "",
             // "empty": ""
         },
     },
