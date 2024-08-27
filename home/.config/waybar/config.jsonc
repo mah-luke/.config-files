@@ -65,7 +65,7 @@
             "class<kitty>": "", //",
             "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
-            "": ""
+            // "": ""
         },
     },
     "keyboard-state": {
