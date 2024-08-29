@@ -13,9 +13,10 @@
         "custom/media"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock",
     ],
     "modules-right": [
+        "tray",
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
@@ -27,10 +28,8 @@
         // "backlight",
         "keyboard-state",
         // "hyprland/language",
-        "battery",
+        "battery"
         // "battery#bat2",
-        "clock",
-        "tray"
         // "custom/power"
     ],
 
@@ -140,8 +139,20 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        // "format-alt": "",
+        "interval": 1,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1
+        },
+        "actions": {
+            "on-scroll-up": "shift-up",
+            "on-scroll-down": "shift-down"
+        }
     },
     "cpu": {
         "format": "{usage}% ",
@@ -204,15 +215,15 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
