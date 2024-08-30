@@ -10,7 +10,8 @@
         "hyprland/workspaces",
         "hyprland/mode",
         "hyprland/scratchpad",
-        "custom/media"
+        "custom/media",
+        "mpris",
     ],
     "modules-center": [
         "clock",
@@ -21,13 +22,13 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         // "backlight",
         "keyboard-state",
         // "hyprland/language",
+        "power-profiles-daemon",
         "battery"
         // "battery#bat2",
         // "custom/power"
@@ -254,5 +255,17 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+     "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        // "ignored-players": ["firefox"]
     }
 }

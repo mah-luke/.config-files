@@ -55,7 +55,8 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: @base09;
+    color: @base04;
+    /* background-color: @base09; */
 }
 
 #workspaces button {
@@ -118,7 +119,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: @default_text;
 }
 
 #window,
@@ -169,26 +170,26 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
+    /* padding-right: 10px; */
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @default_back;
+    color: @base08 ;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
+    background-color: @default_back;
+    color: @default_text;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: @default_back;
+    color: @base0B;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @default_text;
 }
 
 #cpu {
@@ -223,8 +224,8 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: @base0D;
-    color: @default_text;
+    background-color: @default_back;
+    color: @base0D;
 }
 
 /* #wireplumber { */
@@ -260,7 +261,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @default_back;
 }
 
 #tray > .passive {
@@ -269,7 +270,8 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    color: @base08;
+    /* background-color: #eb4d4b; */
 }
 
 #idle_inhibitor {
@@ -277,8 +279,8 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-    background-color: @base08;
-    color: @default_text;
+    /* background-color: @base08; */
+    color: @base08;
 }
 
 #mpd {
