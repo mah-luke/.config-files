@@ -69,7 +69,9 @@
             "class<firefox> title<.*youtube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox> title<.*spotify.*>": "",
             "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            "class<obsidian>": "",
+            "title<.*Slack.*>": "",
+            "title<.*whatsapp.*>": "",
+            "class<obsidian>": "󰇈",
             "title<.*steam.*>": "󰓓",
             "title<.*mtga.*>": "󱡄", // Magic the gathering
             "title<.*launching.*>": "󰝲",

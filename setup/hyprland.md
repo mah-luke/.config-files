@@ -25,7 +25,8 @@ Open the clipboard history with `Super+v`
 
 
 ## waybar
+reload waybar config:
 
-
-
-
+```bash
+ pkill waybar --signal=SIGUSR2
+```
