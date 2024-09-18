@@ -81,6 +81,8 @@
             "title<.*nvim.*>": "",
             "class<discord>": "",
             "class<vesktop>": "",
+            "class<chromium>": "󰊯",
+            "class<google-chrome>": "",
             // "empty": ""
         },
         "move-to-monitor": true
