@@ -35,7 +35,7 @@
     ],
 
     "hyprland/workspaces": {
-        "format": " {icon}{windows} ", // "{name}: {icon}",
+        "format": "{icon}{windows} <sub>{name}</sub> ", // "{name}: {icon}",
         "all-outputs": true,
         "format-icons": {
         // //     "1": "",
@@ -83,6 +83,7 @@
             "class<vesktop>": "",
             // "empty": ""
         },
+        "move-to-monitor": true
     },
     "keyboard-state": {
         "numlock": true,
