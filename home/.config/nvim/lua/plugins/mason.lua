@@ -24,8 +24,8 @@ return {
                 "shellcheck", -- linter
                 "shfmt", -- formatter
                 -- Rust
+                "codelldb", -- debug for C, C++ & Rust
                 "rust-analyzer",
-                "codelldb",
                 -- Latex
                 "latexindent",
                 "ltex-ls",

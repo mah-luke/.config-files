@@ -34,6 +34,7 @@ return {
 
             local lspconfig = require("lspconfig")
             local lsp_conf = require("plugins.lsp.config")
+            local util = require("lspconfig/util")
 
             -- Lua
             lspconfig.lua_ls.setup({
