@@ -30,6 +30,8 @@ return {
                 "latexindent",
                 "ltex-ls",
                 "texlab",
+                -- Security
+                "trivy",
             },
         },
         config = function(_, opts)

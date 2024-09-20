@@ -1,0 +1,17 @@
+[Service]
+Type=oneshot
+ProtectSystem=full
+#PrivateDevices=true
+ProtectHostname=true
+#ProtectClock=true
+ProtectKernelTunables=true
+#ProtectKernelModules=true
+#ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictRealtime=true
+ExecStart=/usr/bin/onedrive --monitor --confdir=/home/lukas/.config/onedrive/onedrive-PERS
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
