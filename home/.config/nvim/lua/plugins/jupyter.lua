@@ -35,7 +35,6 @@ return {
             },
         },
     },
-
     {
         "nvimtools/hydra.nvim",
         version = "*",
@@ -68,7 +67,6 @@ return {
             })
         end,
     },
-
     {
         "GCBallesteros/jupytext.nvim",
         opts = {
@@ -159,7 +157,7 @@ return {
                 end,
                 -- enabled = true,
                 -- hover = { border = "none" },
-                diagnostic_update_events = { "BufWritePost", "InsertLeave", "TextChanged" },
+                diagnostic_update_events = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
             },
             -- buffers = {
             --   set_filetype = true,
@@ -186,7 +184,7 @@ return {
                     chunks = "all", -- 'curly' or 'all'
                     diagnostics = {
                         enabled = true,
-                        triggers = { "BufWritePost" },
+                        triggers = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
                     },
                     completion = {
                         enabled = true,
@@ -245,7 +243,7 @@ return {
             vim.g.molten_image_provider = "image.nvim"
             -- vim.g.molten_output_show_more = true
             vim.g.molten_output_win_border = { "", "━", "", "" }
-            vim.g.molten_output_win_max_height = 24
+            vim.g.molten_output_win_max_height = 32
             -- vim.g.molten_output_virt_lines = true
             vim.g.molten_virt_text_output = true
             -- vim.g.molten_use_border_highlights = true

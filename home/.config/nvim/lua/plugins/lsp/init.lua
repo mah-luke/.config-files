@@ -76,6 +76,62 @@ return {
 
             -- Rust
 
+            -- C
+            lspconfig.clangd.setup({
+                -- servers = {
+                --     -- Ensure mason installs the server
+                --     clangd = {
+                --         keys = {
+                --             {
+                --                 "<leader>ch",
+                --                 "<cmd>ClangdSwitchSourceHeader<cr>",
+                --                 desc = "Switch Source/Header (C/C++)",
+                --             },
+                --         },
+                --         root_dir = function(fname)
+                --             return require("lspconfig.util").root_pattern(
+                --                 "Makefile",
+                --                 "configure.ac",
+                --                 "configure.in",
+                --                 "config.h.in",
+                --                 "meson.build",
+                --                 "meson_options.txt",
+                --                 "build.ninja"
+                --             )(fname) or require("lspconfig.util").root_pattern(
+                --                 "compile_commands.json",
+                --                 "compile_flags.txt"
+                --             )(fname) or require("lspconfig.util").find_git_ancestor(fname)
+                --         end,
+                --         capabilities = {
+                --             offsetEncoding = { "utf-16" },
+                --         },
+                --         cmd = {
+                --             "clangd",
+                --             "--background-index",
+                --             "--clang-tidy",
+                --             "--header-insertion=iwyu",
+                --             "--completion-style=detailed",
+                --             "--function-arg-placeholders",
+                --             "--fallback-style=llvm",
+                --         },
+                --         init_options = {
+                --             usePlaceholders = true,
+                --             completeUnimported = true,
+                --             clangdFileStatus = true,
+                --         },
+                --     },
+                -- },
+                -- setup = {
+                --     clangd = function(_, opts)
+                --         local clangd_ext_opts = LazyVim.opts("clangd_extensions.nvim")
+                --         require("clangd_extensions").setup(
+                --             vim.tbl_deep_extend("force", clangd_ext_opts or {}, { server = opts })
+                --         )
+                --         return false
+                --     end,
+                -- },
+            })
+
             -- Latex
             lspconfig.ltex.setup({
                 settings = {
@@ -98,15 +154,15 @@ return {
         end,
     },
     {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
+        "nvimtools/none-ls.nvim", -- "jose-elias-alvarez/null-ls.nvim",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
-      -- stylua: ignore
-      { "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, "Format current buffer" },
+            -- stylua: ignore
+            { "<leader>lf", function() vim.lsp.buf.format({ async = true }) end, "Format current buffer" },
         },
         opts = function()
-            local null_ls = require("null-ls")
+            local nls = require("null-ls")
             return {
                 -- on_attach = function(client, bufnr)
                 -- if client.supports_method("textDocument/formatting") then
@@ -123,21 +179,21 @@ return {
                 -- nd,
                 sources = {
                     -- lua
-                    null_ls.builtins.formatting.stylua,
+                    nls.builtins.formatting.stylua,
                     -- python
-                    null_ls.builtins.diagnostics.flake8.with({
-                        extra_args = {
-                            "--max-line-length",
-                            "88",
-                            "--extend-ignore",
-                            "E203",
-                        },
-                    }),
-                    null_ls.builtins.diagnostics.mypy,
-                    null_ls.builtins.formatting.black,
+                    -- nls.builtins.diagnostics.flake8.with({
+                    --     extra_args = {
+                    --         "--max-line-length",
+                    --         "88",
+                    --         "--extend-ignore",
+                    --         "E203",
+                    --     },
+                    -- }),
+                    nls.builtins.diagnostics.mypy,
+                    nls.builtins.formatting.black,
                     -- sh
-                    null_ls.builtins.diagnostics.shellcheck,
-                    null_ls.builtins.formatting.shfmt.with({
+                    -- nls.builtins.diagnostics.shellcheck,
+                    nls.builtins.formatting.shfmt.with({
                         extra_args = {
                             "--indent",
                             "4",
