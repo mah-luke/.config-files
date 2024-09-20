@@ -26,6 +26,8 @@ return {
                 -- Rust
                 "codelldb", -- debug for C, C++ & Rust
                 "rust-analyzer",
+                -- C / C++
+                "clangd",
                 -- Latex
                 "latexindent",
                 "ltex-ls",
