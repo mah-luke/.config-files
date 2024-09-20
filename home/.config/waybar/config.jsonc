@@ -75,7 +75,7 @@
             "title<.*steam.*>": "󰓓",
             "title<.*mtga.*>": "󱡄", // Magic the gathering
             "title<.*launching.*>": "󰝲",
-            "class<evolution>": "",
+            "class<.*evolution.*>": "",
             "class<kitty>": "", //",
             "title<.*btop.*>": "",
             "title<.*nvim.*>": "",
