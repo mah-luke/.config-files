@@ -28,6 +28,8 @@ return {
                 "rust-analyzer",
                 -- C / C++
                 "clangd",
+                -- Make
+                "autotools-language-server",
                 -- Latex
                 "latexindent",
                 "ltex-ls",
