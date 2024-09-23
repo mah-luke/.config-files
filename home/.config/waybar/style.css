@@ -154,18 +154,18 @@ button:hover {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @default_back;
+        color: @default_text;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    /* background-color: @base08; */
+    background-color: @default_back;
     color: @base08;
     animation-name: blink;
     animation-duration: 0.5s;
-    animation-timing-function: steps(12);
+    animation-timing-function: steps(24);
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -216,7 +216,8 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: @base08;
+    color: @base08;
+    /* background-color: @base08; */
 }
 
 #pulseaudio {
