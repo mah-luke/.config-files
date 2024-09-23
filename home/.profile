@@ -32,4 +32,4 @@ fi
 . $HOME/.config/shell/aliases.sh
 
 # load environment
-. $HOME/.config/shell/environment.sh
+. $HOME/.config/shell/environment.sh. "$HOME/.rye/env"
