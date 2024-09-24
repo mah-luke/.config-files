@@ -15,14 +15,10 @@ return {
                 "lua-language-server", -- LSP
                 "stylua", -- formatter
                 -- Python
-                "pyright", -- LSP
                 "debugpy", -- DAP
-                "black", -- formatter
-                "flake8", -- linter
-                "mypy", -- linter
+                "ruff", -- LSP & Formatter & Linter
                 -- Shell
-                "shellcheck", -- linter
-                "shfmt", -- formatter
+                "bash-language-server", -- LSP
                 -- Rust
                 "codelldb", -- debug for C, C++ & Rust
                 "rust-analyzer",

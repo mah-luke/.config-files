@@ -43,6 +43,7 @@ return {
         "MeanderingProgrammer/markdown.nvim",
         main = "render-markdown",
         name = "render-markdown", -- don't clash with other markdown.nvim plugin
+        ft = "markdown",
         opts = {
             code = {
                 -- disable_background = { "python" },

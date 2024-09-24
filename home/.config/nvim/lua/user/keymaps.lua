@@ -54,4 +54,4 @@ map({ "n", "v" }, "<leader>yy", '"+yy', "Copy line to clipboard")
 -- map({ "n", "v" }, "<leader>Y", '"+yg_', "Copy selection to clipboard without newline")
 
 map({ "n", "v" }, "<leader>p", '"+p', "Paste from clipboard")
--- map({ "n", "v" }, "<leader>p", '"+P', "Paste from clipboard")
+map({ "n", "v" }, "<leader>P", '"+P', "Paste from clipboard")

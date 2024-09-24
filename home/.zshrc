@@ -1,7 +1,6 @@
 if [ "${PATH}#"$HOME/.local/bin"}" = "$PATH" ]; then
-   export PATH=$HOME/.local/bin:$PATH
+    export PATH=$HOME/.local/bin:$PATH
 fi
-
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -110,10 +109,25 @@ fi
 
 # ----- CUSTOM_CONFIG ------
 
-
 # fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# Editor
+# Edit directly in "$EDITOR" by pressing 'v' in normal mode.
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+
+# Keybinds
+bindkey -v                            # vi mode
+bindkey '^[[3~' delete-char           # delete key. Find out with <^v + DELETE>.
+bindkey -M menuselect '\e' send-break # <Esc>
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+export KEYTIMEOUT=1
 
 # Load aliases
 . $HOME/.config/shell/aliases.sh
@@ -124,7 +138,6 @@ zstyle ':completion:*' menu select
 # case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-
 # # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 #
@@ -133,14 +146,12 @@ if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # Device specific
 if [ -f '/home/lukas/.config/shell/custom.sh' ]; then
-    source '/home/lukas/.config/shell/custom.sh';
+    source '/home/lukas/.config/shell/custom.sh'
 fi
 
 if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-    tmux;
+    tmux
 fi
-
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
-

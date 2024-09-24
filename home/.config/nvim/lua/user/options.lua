@@ -43,3 +43,4 @@ vim.opt.wildmode = "full:longest,full,full" -- Completion mode TODO: What wildmo
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.conceallevel = 1
+vim.opt.inccommand = "split"

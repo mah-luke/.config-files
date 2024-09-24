@@ -78,7 +78,7 @@
             "class<.*evolution.*>": "",
             "class<kitty>": "", //",
             "title<.*btop.*>": "",
-            "title<.*nvim.*>": "",
+            "class<kitty> title<.*nvim.*>": "",
             "class<discord>": "",
             "class<vesktop>": "",
             "class<chromium>": "󰊯",

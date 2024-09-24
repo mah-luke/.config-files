@@ -36,49 +36,39 @@ return {
             local lsp_conf = require("plugins.lsp.config")
             local util = require("lspconfig/util")
 
-            -- Lua
-            lspconfig.lua_ls.setup({
-                settings = {
-                    Lua = {
-                        runtime = { version = "LuaJIT" },
-                        diagnostics = {
-                            globals = {
-                                "vim",
-                            },
-                        },
-                        format = { enable = false },
-                        workspace = {
-                            checkThirdParty = false,
-                        },
-                        telemetry = { enable = false },
-                    },
-                },
-                capabilities = lsp_conf.capabilities,
-                flags = lsp_conf.lsp_flags,
-                on_attach = lsp_conf.on_attach,
-            })
+            local servers = {
 
-            -- Python
-            lspconfig.pyright.setup({
-                capabilities = lsp_conf.capabilities,
-                flags = lsp_conf.lsp_flags,
-                on_attach = lsp_conf.on_attach,
-                settings = {
-                    python = {
-                        analysis = {
-                            diagnosticSeverityOverrides = {
-                                reportUnusedExpression = "none",
+                -- Lua
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            runtime = { version = "LuaJIT" },
+                            diagnostics = {
+                                globals = {
+                                    "vim",
+                                },
                             },
+                            format = { enable = false },
+                            workspace = {
+                                checkThirdParty = false,
+                            },
+                            telemetry = { enable = false },
                         },
                     },
                 },
-            })
 
-            -- Rust
+                -- Python
+                ruff = {},
 
-            -- C
-            lspconfig.clangd.setup({
+                -- Shell
+                bashls = {
+                    filetypes = { "sh", "zsh" },
+                },
 
+                -- Rust
+
+                -- C
+                clangd = {
                 keys = {
                     {
                         "<leader>ch",
@@ -117,34 +107,30 @@ return {
                     completeUnimported = true,
                     clangdFileStatus = true,
                 },
-            })
+            },
 
-            -- Make
-            lspconfig.autotools_ls.setup({
-                capabilities = lsp_conf.capabilities,
-                flags = lsp_conf.lsp_flags,
-                on_attach = lsp_conf.on_attach,
-            })
-
-            -- Latex
-            lspconfig.ltex.setup({
-                settings = {
-                    ltex = {
-                        language = "en-US",
-                        dictionary = {
-                            ["en-US"] = words() or {},
+                -- Latex
+                ltex = {
+                    settings = {
+                        ltex = {
+                            language = "en-US",
+                            dictionary = {
+                                ["en-US"] = words() or {},
+                            },
                         },
                     },
                 },
-                capabilities = lsp_conf.capabilities,
-                flags = lsp_conf.lsp_flags,
-                on_attach = lsp_conf.on_attach,
-            })
-            lspconfig.texlab.setup({
-                capabilities = lsp_conf.capabilities,
-                flags = lsp_conf.lsp_flags,
-                on_attach = lsp_conf.on_attach,
-            })
+
+                texlab = {},
+            }
+            for name, config in pairs(servers) do
+                config = vim.tbl_deep_extend("force", {}, {
+                    capabilities = lsp_conf.capabilities,
+                    flags = lsp_conf.lsp_flags,
+                    on_attach = lsp_conf.on_attach,
+                }, config)
+                lspconfig[name].setup(config)
+            end
         end,
     },
     {
@@ -158,19 +144,19 @@ return {
         opts = function()
             local nls = require("null-ls")
             return {
-                -- on_attach = function(client, bufnr)
-                -- if client.supports_method("textDocument/formatting") then
-                --     local augroup = vim.api.nvim_create_augroup("LspFromatting", { clear = true })
-                --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                --     vim.api.nvim_create_autocmd("BufWritePre", {
-                --         group = augroup,
-                --         buffer = bufnr,
-                --         callback = function()
-                --             vim.lsp.buf.format({ async = false })
-                --         end,
-                --     })
-                -- end
-                -- nd,
+                on_attach = function(client, bufnr)
+                    if client.supports_method("textDocument/formatting") then
+                        local augroup = vim.api.nvim_create_augroup("LspFromatting", { clear = true })
+                        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            group = augroup,
+                            buffer = bufnr,
+                            callback = function()
+                                vim.lsp.buf.format({ async = false })
+                            end,
+                        })
+                    end
+                end,
                 sources = {
                     -- lua
                     nls.builtins.formatting.stylua,
@@ -183,11 +169,11 @@ return {
                     --         "E203",
                     --     },
                     -- }),
-                    nls.builtins.diagnostics.mypy,
-                    nls.builtins.formatting.black,
+                    -- nls.builtins.diagnostics.mypy,
+                    -- nls.builtins.formatting.black,
                     -- sh
-                    -- nls.builtins.diagnostics.shellcheck,
                     nls.builtins.formatting.shfmt.with({
+                        filetypes = { "sh", "bash", "zsh" },
                         extra_args = {
                             "--indent",
                             "4",
@@ -196,6 +182,7 @@ return {
                             "--space-redirects",
                         },
                     }),
+                    -- nls.builtins.formatting.shellharden,
                 },
             }
         end,

@@ -8,8 +8,8 @@ alias bac='cd $BAC'
 
 # ---- application ---
 alias v="nvim"
-alias clip="xclip -selection c"
-alias paste="clip -o"
+alias clip="wl-copy"
+alias paste="wl-paste"
 
 alias pdf-merge="ghostscript -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf *"
 
