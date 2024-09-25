@@ -5,10 +5,11 @@ Install hyprland and make sure following applications are installed:
 - kitty (terminal)
 - dolphin (file manager, nautilus is alternative)
 - wofi (application selection & running)
-- swww (wallpaper)
+- hyprpaper (wallpaper)
 - waybar (bar)
 - wl-clipboard (clipboard)
 - grim & slurp (screenshot)
+- brightnessctl (set display & keyboard light)
 
 
 ## Font
@@ -22,6 +23,8 @@ Open the clipboard history with `Super+v`
 
 ## Lockscreen
 
+## hypridle
+Make sure sleep config is set correctly (see man systemd-sleep.conf)
 
 
 ## waybar
@@ -30,3 +33,4 @@ reload waybar config:
 ```bash
  pkill waybar --signal=SIGUSR2
 ```
+
