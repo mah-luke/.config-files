@@ -26,6 +26,8 @@ Open the clipboard history with `Super+v`
 ## hypridle
 Make sure sleep config is set correctly (see man systemd-sleep.conf)
 
+For Hibernation: Make sure to follow [Arch guide](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Configure_the_initramfs) to setup hibernation in `/etc/mkinitcpio.conf`.
+
 
 ## waybar
 reload waybar config:
