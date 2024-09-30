@@ -17,6 +17,7 @@ return {
                 -- Python
                 "debugpy", -- DAP
                 "ruff", -- LSP & Formatter & Linter
+                "pyright",
                 -- Shell
                 "bash-language-server", -- LSP
                 -- Rust
