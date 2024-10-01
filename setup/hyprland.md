@@ -28,6 +28,7 @@ Make sure sleep config is set correctly (see man systemd-sleep.conf)
 
 For Hibernation: Make sure to follow [Arch guide](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Configure_the_initramfs) to setup hibernation in `/etc/mkinitcpio.conf`.
 
+On NVIDIA systems: Also follow [this guide](https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks) which contains the section "Preserve video memory after suspend".
 
 ## waybar
 reload waybar config:
