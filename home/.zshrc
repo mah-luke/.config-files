@@ -119,6 +119,26 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
+
+# Cursor shape
+# Set shape depending on mode.
+# shape list: https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html
+function zle-keymap-select() {
+    case $KEYMAP in
+        vicmd)
+            echo -ne '\e[2 q'
+            ;;
+        viins|main)
+            echo -ne '\e[6 q'
+            ;;
+    esac
+}
+zle-line-init() {
+    echo -ne '\e[6 q'
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+
 # Keybinds
 bindkey -v                            # vi mode
 bindkey '^[[3~' delete-char           # delete key. Find out with <^v + DELETE>.
