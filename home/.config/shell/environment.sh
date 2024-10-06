@@ -34,8 +34,9 @@ export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
 
 # MAC adresses
-export DESKTOP_MAC="00:d8:61:16:af:1f"
-export HAMA_DISK="00:00:00:00:21:BE"
+export MAC_DESKTOP="00:d8:61:16:af:1f"
+export MAC_HAMA_DISK="00:00:00:00:21:BE"
+export MAC_K6_PRO="6C:93:08:60:BC:4E"
 
 
 # tmux

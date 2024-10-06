@@ -53,7 +53,7 @@ alias aurs='paru -Slq | fzf --preview "paru -Si {}" | xargs -ro paru -S'
 
 # Server setup
 alias suspendexit="systemctl suspend && exit"
-alias desktopwol='wol ${DESKTOP_MAC}'
+alias desktopwol='wol ${MAC_DESKTOP}'
 
 # misc
 alias get-pdfs="mkdir pdfs && find ./ -type f -exec cp {} -t pdfs \;"
