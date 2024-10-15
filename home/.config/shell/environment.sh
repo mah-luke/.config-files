@@ -17,7 +17,7 @@ export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
 
-export SEM="$HOME"/OneDrive-TU/Uni/SS2024
+export SEM="$HOME"/OneDrive-TU/Uni/WS2024
 export BAC="$HOME"/OneDrive-TU/Uni/Bachelorarbeit
 export NOTES=~/OneDrive/Dokumente_Cloud/Notes
 
@@ -37,7 +37,6 @@ export FZF_ALT_C_OPTS="--preview 'tree -a --gitignore -C -L 1 {}'"
 export MAC_DESKTOP="00:d8:61:16:af:1f"
 export MAC_HAMA_DISK="00:00:00:00:21:BE"
 export MAC_K6_PRO="6C:93:08:60:BC:4E"
-
 
 # tmux
 export TINTED_TMUX_OPTION_STATUSBAR=1
