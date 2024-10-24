@@ -74,6 +74,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     autoswitch_virtualenv
     git
+    poetry
+    rye # probably can be removed, works already with regular pacman install
     z
     zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
@@ -119,7 +121,6 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
-
 # Cursor shape
 # Set shape depending on mode.
 # shape list: https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html
@@ -128,7 +129,7 @@ function zle-keymap-select() {
         vicmd)
             echo -ne '\e[2 q'
             ;;
-        viins|main)
+        viins | main)
             echo -ne '\e[6 q'
             ;;
     esac
