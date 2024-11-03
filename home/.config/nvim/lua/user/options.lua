@@ -10,7 +10,7 @@ vim.g.maplocalleader = " "
 vim.g.tex_flavor = "latex" -- `:help ft-tex-plugin`
 
 -- python provider
-vim.g.python3_host_prog = "/usr/bin/python"
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- `:help options`
 -- Compact list under `:help option-list`

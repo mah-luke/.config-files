@@ -50,8 +50,11 @@ return {
     {
         "mfussenegger/nvim-dap-python",
         ft = "python",
+        dependencies = { "mfussenegger/nvim-dap" },
         config = function()
-            require("dap-python").setup("/usr/bin/python")
+            require("dap-python").setup("/home/lukas/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+            require("dap-python").test_runner = "pytest"
+            -- require("dap-python").setup("/usr/bin/python3")
         end,
         keys = {
             {
