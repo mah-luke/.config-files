@@ -72,7 +72,7 @@ return {
         lazy = false,
         config = function()
             vim.g.vimtex_compiler_latexmk = {
-                aux_dir = "aux",
+                aux_dir = "auxil",
                 out_dir = "out",
                 callback = 1,
                 continuous = 1,

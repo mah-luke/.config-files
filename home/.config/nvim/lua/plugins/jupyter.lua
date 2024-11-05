@@ -22,7 +22,7 @@ return {
             max_height_window_percentage = 70, -- math.huge,
             max_width_window_percentage = 70, -- math.huge,
             window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
-            window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+            -- window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
 
             integrations = {
                 markdown = {
@@ -81,58 +81,58 @@ return {
             local jupytext = require("jupytext")
             jupytext.setup(config)
 
-            vim.keymap.set(
-                "n",
-                "<localleader>cn",
-                [[i{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "eac18b0c",
-   "metadata": {
-    "lines_to_next_cell": 0
-   },
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "073a95f5",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "print(\"Hello World\")"
-   ]
-  }
- ],
- "metadata": {
-  "colab": {
-   "provenance": [],
-   "toc_visible": true
-  },
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.10.10"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}]],
-                { desc = "Create a new code cell", silent = true }
-            )
+            -- vim.keymap.set(
+            --     "n",
+            --     "<localleader>cn",
+            --     [[i{
+            --      "cells": [
+            --       {
+            --        "cell_type": "markdown",
+            --        "id": "eac18b0c",
+            --        "metadata": {
+            --         "lines_to_next_cell": 0
+            --        },
+            --        "source": []
+            --       },
+            --       {
+            --        "cell_type": "code",
+            --        "execution_count": null,
+            --        "id": "073a95f5",
+            --        "metadata": {},
+            --        "outputs": [],
+            --        "source": [
+            --         "print(\"Hello World\")"
+            --        ]
+            --       }
+            --      ],
+            --      "metadata": {
+            --       "colab": {
+            --        "provenance": [],
+            --        "toc_visible": true
+            --       },
+            --       "kernelspec": {
+            --        "display_name": "Python 3 (ipykernel)",
+            --        "language": "python",
+            --        "name": "python3"
+            --       },
+            --       "language_info": {
+            --        "codemirror_mode": {
+            --         "name": "ipython",
+            --         "version": 3
+            --        },
+            --        "file_extension": ".py",
+            --        "mimetype": "text/x-python",
+            --        "name": "python",
+            --        "nbconvert_exporter": "python",
+            --        "pygments_lexer": "ipython3",
+            --        "version": "3.10.10"
+            --       }
+            --      },
+            --      "nbformat": 4,
+            --      "nbformat_minor": 4
+            --     }]],
+            --     { desc = "Create a new code cell", silent = true }
+            -- )
         end,
     },
     {
@@ -237,7 +237,7 @@ return {
             -- vim.g.molten_cover_empty_lines = true
             -- vim.g.molten_comment_string = "# %%"
 
-            -- vim.g.molten_auto_image_popup = true
+            vim.g.molten_auto_image_popup = true
             -- vim.g.molten_show_mimetype_debug = true
             vim.g.molten_auto_open_output = false
             vim.g.molten_image_provider = "image.nvim"
@@ -385,7 +385,10 @@ return {
                     --
 
                     local venv = os.getenv("VIRTUAL_ENV")
-                    local kernel_name = string.match(venv, "/.+/(.+)/.+")
+                    local kernel_name = nil
+                    if venv ~= nil then
+                        kernel_name = string.match(venv, "/.+/(.+)/.+")
+                    end
                     if kernel_name ~= nil and vim.tbl_contains(kernels, kernel_name) then
                         vim.cmd(("MoltenInit %s"):format(kernel_name))
                     end
