@@ -75,7 +75,6 @@ plugins=(
     autoswitch_virtualenv
     git
     poetry
-    rye # probably can be removed, works already with regular pacman install
     z
     zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
