@@ -152,6 +152,10 @@ export KEYTIMEOUT=1
 # Load aliases
 . $HOME/.config/shell/aliases.sh
 
+# uv autocompletion
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
 # Basic auto/tab completion
 autoload -Uz compinit
 zstyle ':completion:*' menu select
