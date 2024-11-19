@@ -5,14 +5,14 @@
 -- https://github.com/barreiroleo/ltex_extra.nvim
 
 -- Spell dict for LaTeX
-local function words()
-    local result = {}
-    local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
-    for word in io.open(path, "r"):lines() do
-        table.insert(result, word)
-    end
-    return result
-end
+-- local function words()
+--     local result = {}
+--     local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+--     for word in io.open(path, "r"):lines() do
+--         table.insert(result, word)
+--     end
+--     return result
+-- end
 
 return {
     {
@@ -65,7 +65,6 @@ return {
                             reportUnusedExpression = "none",
                         },
                     },
-
                 },
 
                 -- Shell
@@ -122,10 +121,15 @@ return {
                 ltex = {
                     settings = {
                         ltex = {
-                            language = "en-US",
-                            dictionary = {
-                                ["en-US"] = words() or {},
-                            },
+                            language = { "en-US", "de-AT" }, -- "auto"
+                            checkFrequency = "save",
+                            -- dictionary = {
+                            --     ["en-US"] = words() or {},
+                            -- },
+                            -- additionalRules = {
+                            --     enablePickyRules = true,
+                            --     motherTongue = "de-AT",
+                            -- },
                         },
                     },
                 },
@@ -202,7 +206,12 @@ return {
     },
     {
         "barreiroleo/ltex_extra.nvim",
-        ft = { "markdown", "tex" },
+        branch = "dev",
+        -- ft = { "markdown", "tex" },
+        opts = {
+            load_langs = { "en-US", "de-AT" },
+            path = "~/.config/ltex",
+        },
         dependencies = { "neovim/nvim-lspconfig" },
     },
     { "williamboman/mason-lspconfig.nvim" },
