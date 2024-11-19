@@ -59,7 +59,14 @@ return {
 
                 -- Python
                 ruff = {},
-                pyright = {},
+                pyright = {
+                    analysis = {
+                        diagnosticSeverityOverrides = {
+                            reportUnusedExpression = "none",
+                        },
+                    },
+
+                },
 
                 -- Shell
                 bashls = {
