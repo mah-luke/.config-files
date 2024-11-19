@@ -40,12 +40,25 @@ return {
     --     },
     -- },
     {
-        "MeanderingProgrammer/markdown.nvim",
+        "MeanderingProgrammer/render-markdown.nvim",
         main = "render-markdown",
         name = "render-markdown", -- don't clash with other markdown.nvim plugin
         ft = "markdown",
         opts = {
+            win_options = {
+                conceallevel = {
+                    default = vim.api.nvim_get_option_value('conceallevel', {}),
+                    rendered = 3,
+                },
+            },
+            render_modes = true,
             code = {
+                language_name = true,
+                -- left_pad = 2,
+                border = "thin", -- Used above code blocks for thin border
+                above = "▄",
+                -- Used below code blocks for thin border
+                below = "▀",
                 -- disable_background = { "python" },
                 -- border = "thick",
             },
@@ -56,12 +69,15 @@ return {
             },
         },
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
-        config = function()
+        config = function(_, opts)
+            render_markdown = require("render-markdown").setup(opts)
             local colors = require("base16-colorscheme").colors
             vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { fg = colors.base08 })
             vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { fg = colors.base09 })
             vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { fg = colors.base0A })
             vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { fg = colors.base0B })
+            vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#121212"})
+            -- vim.api.nvim_set_hl(0, "Normal", { bg = colors.base01 })
         end,
     },
     {

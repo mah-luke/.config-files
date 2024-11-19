@@ -81,58 +81,58 @@ return {
             local jupytext = require("jupytext")
             jupytext.setup(config)
 
-            -- vim.keymap.set(
-            --     "n",
-            --     "<localleader>cn",
-            --     [[i{
-            --      "cells": [
-            --       {
-            --        "cell_type": "markdown",
-            --        "id": "eac18b0c",
-            --        "metadata": {
-            --         "lines_to_next_cell": 0
-            --        },
-            --        "source": []
-            --       },
-            --       {
-            --        "cell_type": "code",
-            --        "execution_count": null,
-            --        "id": "073a95f5",
-            --        "metadata": {},
-            --        "outputs": [],
-            --        "source": [
-            --         "print(\"Hello World\")"
-            --        ]
-            --       }
-            --      ],
-            --      "metadata": {
-            --       "colab": {
-            --        "provenance": [],
-            --        "toc_visible": true
-            --       },
-            --       "kernelspec": {
-            --        "display_name": "Python 3 (ipykernel)",
-            --        "language": "python",
-            --        "name": "python3"
-            --       },
-            --       "language_info": {
-            --        "codemirror_mode": {
-            --         "name": "ipython",
-            --         "version": 3
-            --        },
-            --        "file_extension": ".py",
-            --        "mimetype": "text/x-python",
-            --        "name": "python",
-            --        "nbconvert_exporter": "python",
-            --        "pygments_lexer": "ipython3",
-            --        "version": "3.10.10"
-            --       }
-            --      },
-            --      "nbformat": 4,
-            --      "nbformat_minor": 4
-            --     }]],
-            --     { desc = "Create a new code cell", silent = true }
-            -- )
+            vim.keymap.set(
+                "n",
+                "<localleader>cn",
+                [[i{
+                 "cells": [
+                  {
+                   "cell_type": "markdown",
+                   "id": "eac18b0c",
+                   "metadata": {
+                    "lines_to_next_cell": 0
+                   },
+                   "source": []
+                  },
+                  {
+                   "cell_type": "code",
+                   "execution_count": null,
+                   "id": "073a95f5",
+                   "metadata": {},
+                   "outputs": [],
+                   "source": [
+                    "print(\"Hello World\")"
+                   ]
+                  }
+                 ],
+                 "metadata": {
+                  "colab": {
+                   "provenance": [],
+                   "toc_visible": true
+                  },
+                  "kernelspec": {
+                   "display_name": "Python 3 (ipykernel)",
+                   "language": "python",
+                   "name": "python3"
+                  },
+                  "language_info": {
+                   "codemirror_mode": {
+                    "name": "ipython",
+                    "version": 3
+                   },
+                   "file_extension": ".py",
+                   "mimetype": "text/x-python",
+                   "name": "python",
+                   "nbconvert_exporter": "python",
+                   "pygments_lexer": "ipython3",
+                   "version": "3.10.10"
+                  }
+                 },
+                 "nbformat": 4,
+                 "nbformat_minor": 4
+                }]],
+                { desc = "Create a new code cell", silent = true }
+            )
         end,
     },
     {
@@ -242,14 +242,18 @@ return {
             vim.g.molten_auto_open_output = false
             vim.g.molten_image_provider = "image.nvim"
             -- vim.g.molten_output_show_more = true
+            --
             vim.g.molten_output_win_border = { "", "━", "", "" }
             vim.g.molten_output_win_max_height = 32
             -- vim.g.molten_output_virt_lines = true
             vim.g.molten_virt_text_output = true
-            -- vim.g.molten_use_border_highlights = true
+            vim.g.molten_use_border_highlights = true
             vim.g.molten_virt_lines_off_by_1 = true
             vim.g.molten_wrap_output = true
             vim.g.molten_tick_rate = 144
+
+
+            vim.api.nvim_set_hl(0, "MoltenCell", {bg=""})
 
             vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>", { desc = "Initialize Molten", silent = true })
             vim.keymap.set("n", "<localleader>ir", function()
