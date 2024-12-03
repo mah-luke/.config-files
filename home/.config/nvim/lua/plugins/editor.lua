@@ -12,16 +12,35 @@ return {
                     vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
                 end
 
-            -- stylua: ignore start
-            map("n", "]h", gs.next_hunk, "Next Hunk")
-            map("n", "[h", gs.prev_hunk, "Prev Hunk")
-            map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
-            map("n", "<leader>ghp", gs.preview_hunk, "Preview Hunk")
-            map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
-            map("n", "<leader>ghd", gs.diffthis, "Diff This")
-            map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-                -- stylua: ignore end
+                -- stylua: ignore start
+                map("n", "]g", gs.next_hunk, "GitSigns Next Hunk")
+                map("n", "[g", gs.prev_hunk, "GitSigns Prev Hunk")
+                -- map("n", "<leader>gl", gs.set_loclist, "GitSigns LocList")
+
+                map('n', '<leader>gs', gs.stage_hunk, "GitSigns Stage Hunk")
+                map('n', '<leader>gr', gs.reset_hunk, "GitSigns Reset Hunk")
+                map('v', '<leader>gs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, "GitSigns Stage Hunk Visual")
+                map('v', '<leader>gr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, "GitSigns Reset Hunk Visual")
+                map('n', '<leader>gS', gs.stage_buffer, "GitSigns Stage Buffer")
+                map('n', '<leader>gu', gs.undo_stage_hunk, "GitSigns Undo Stage Hunk")
+                map('n', '<leader>gR', gs.reset_buffer, "GitSigns Reset Buffer")
+                map('n', '<leader>gp', gs.preview_hunk, "GitSigns Preview Hunk")
+                map('n', '<leader>gb', function() gs.blame_line{full=true} end, "GitSigns Blame Line")
+                map('n', '<leader>gB', gs.blame, "GitSigns Blame Buffer")
+                map('n', '<leader>gtb', gs.toggle_current_line_blame, "GitSigns Toggle Current Line Blame")
+                map('n', '<leader>gd', gs.diffthis, "GitSigns Diff This")
+                map('n', '<leader>gD', function() gs.diffthis('~') end, "GitSigns Diff This ~")
+                map('n', '<leader>gtd', gs.toggle_deleted, "GitSigns Toggle Deleted")
+
+                -- Text object
+                -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+                -- stylua: ingore end
             end,
+            signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+            numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+            linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+            word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+            current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
         },
     },
     -- git diff & merge
