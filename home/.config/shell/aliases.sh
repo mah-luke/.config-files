@@ -11,7 +11,7 @@ alias v="nvim"
 alias clip="wl-copy"
 alias paste="wl-paste"
 
-alias pdf-merge="ghostscript -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf *"
+alias pdf-merge="ghostscript -dBATCH -DNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merge.pdf */*.pdf"
 
 alias ..="cd .."
 alias ...="cd ../.."
