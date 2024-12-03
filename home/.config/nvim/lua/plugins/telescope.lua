@@ -16,6 +16,7 @@ return {
             },
         },
         cmd = "Telescope",
+        -- TODO: add Keymaps for git using Telescope
         keys = {
             { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope Find Files" },
             { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope Live Grep" },
@@ -23,8 +24,8 @@ return {
             { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope Find Help" },
             { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Telescope Find Keymaps" },
             { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Telescope Find Old Files" },
-            { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "[T]elescope Find [C]ommands" },
-            { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "[T]elescop Find [D]iagnostics" },
+            { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "Telescope [F]ind [C]ommands" },
+            { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Telescop [F]ind [D]iagnostics" },
             {
                 "<leader>fdf",
                 function()
@@ -35,6 +36,12 @@ return {
                 end,
                 desc = "Find Dotfiles",
             },
+            {
+                "<leader>fs",
+                "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+                desc = "Telescope [F]ind dynamic workspace [S]ymbols",
+            },
+            { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope [F]ind [R]eferences" },
         },
         config = function(_, opts)
             require("telescope").setup(opts)
