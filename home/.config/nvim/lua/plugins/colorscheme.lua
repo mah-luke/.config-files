@@ -48,11 +48,16 @@ return {
     config = function(_, opts)
         require("mini.base16").setup(opts)
         local colors = opts.palette
+        local default_text = colors.base00
         -- TODO: find good defaults for diff
-        vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.base0D })
-        vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#242918" })
-        vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#331514" })
-        vim.api.nvim_set_hl(0, "DiffChange", { bg = "#10171a" })
-        vim.api.nvim_set_hl(0, "DiffText", { bg = "#31454d" })
+        vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.base0C })
+        -- vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#242918" })
+        -- vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#331514" })
+        -- vim.api.nvim_set_hl(0, "DiffChange", { bg = "#10171a" })
+        -- vim.api.nvim_set_hl(0, "DiffText", { bg = "#31454d" })
+        vim.api.nvim_set_hl(0, "DiffAdd", { fg = default_text, bg = colors.base0B })
+        vim.api.nvim_set_hl(0, "DiffDelete", { fg = default_text, bg = colors.base08 })
+        vim.api.nvim_set_hl(0, "DiffChange", { fg = default_text, bg = colors.base03 })
+        vim.api.nvim_set_hl(0, "DiffText", { fg = default_text, bg = colors.base0D })
     end,
 }
