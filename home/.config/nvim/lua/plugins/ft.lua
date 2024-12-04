@@ -47,7 +47,7 @@ return {
         opts = {
             win_options = {
                 conceallevel = {
-                    default = vim.api.nvim_get_option_value('conceallevel', {}),
+                    default = vim.api.nvim_get_option_value("conceallevel", {}),
                     rendered = 3,
                 },
             },
@@ -71,12 +71,12 @@ return {
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
         config = function(_, opts)
             render_markdown = require("render-markdown").setup(opts)
-            local colors = require("base16-colorscheme").colors
+            local colors = Colors
             vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { fg = colors.base08 })
             vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { fg = colors.base09 })
             vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { fg = colors.base0A })
             vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { fg = colors.base0B })
-            vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#121212"})
+            vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#121212" })
             -- vim.api.nvim_set_hl(0, "Normal", { bg = colors.base01 })
         end,
     },
