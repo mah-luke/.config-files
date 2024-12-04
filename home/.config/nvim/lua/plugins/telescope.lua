@@ -9,8 +9,7 @@ return {
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-                config = function()
+                build = "make", config = function()
                     require("telescope").load_extension("fzf")
                 end,
             },
@@ -42,6 +41,7 @@ return {
                 desc = "Telescope [F]ind dynamic workspace [S]ymbols",
             },
             { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope [F]ind [R]eferences" },
+            -- Git
         },
         config = function(_, opts)
             require("telescope").setup(opts)

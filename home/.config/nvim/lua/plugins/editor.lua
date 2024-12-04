@@ -48,7 +48,26 @@ return {
     {
         "sindrets/diffview.nvim",
         event = { "BufReadPre", "BufNewFile" },
-        opts = {},
+        opts = {
+            -- enhanced_diff_hl = true,
+        },
+        config = function(_, opts)
+            diffview = require("diffview").setup(opts)
+            vim.keymap.set("n", "<leader>gvo", ":DiffviewOpen<cr>", { desc = "Git DiffView open" })
+            vim.keymap.set("n", "<leader>gvc", ":DiffviewClose<cr>", { desc = "Git DiffView close" })
+            vim.keymap.set(
+                "n",
+                "<leader>gvb",
+                ":DiffviewFileHistory %<cr>",
+                { desc = "Git DiffView File History Buffer" }
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>gvh",
+                ":DiffviewFileHistory<cr>",
+                { desc = "Git DiffView File History Buffer" }
+            )
+        end,
     },
 
     -- keymaps for commenting
