@@ -36,7 +36,7 @@ return {
                 -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
                 -- stylua: ingore end
             end,
-            signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+            signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
             numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
             linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
             word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -78,5 +78,19 @@ return {
         },
 
         opts = {},
+    },
+    {
+        "ldelossa/gh.nvim",
+        dependencies = {
+            {
+                "ldelossa/litee.nvim",
+                config = function()
+                    require("litee.lib").setup()
+                end,
+            },
+        },
+        config = function()
+            require("litee.gh").setup()
+        end,
     },
 }

@@ -143,7 +143,14 @@ return {
             end
         end,
     },
-
+    {
+        "stevearc/oil.nvim",
+        ---@module 'oil'
+        ---@type oil.SetupOpts
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    },
     {
         "nvim-neo-tree/neo-tree.nvim",
         opts = function(_, opts)

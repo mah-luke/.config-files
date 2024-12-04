@@ -50,7 +50,7 @@ return {
         local colors = opts.palette
         local default_text = colors.base00
         -- TODO: find good defaults for diff
-        vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.base0C })
+        vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.base09 })
         -- vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#242918" })
         -- vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#331514" })
         -- vim.api.nvim_set_hl(0, "DiffChange", { bg = "#10171a" })
