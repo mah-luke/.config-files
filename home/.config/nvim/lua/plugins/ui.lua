@@ -149,6 +149,9 @@ return {
         ---@type oil.SetupOpts
         opts = {},
         -- Optional dependencies
+        opts = function(_, opts)
+            vim.keymap.set("n", "e", "<CMD>Oil<cr>", { desc = "Open Oil with parent directory" })
+        end,
         dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     },
     {
@@ -159,7 +162,7 @@ return {
             table.insert(opts.open_files_do_not_replace_types, "edgy")
         end,
         keys = {
-            { "<leader>e", "<Cmd>Neotree toggle<CR>", desc = "Toggle file manager" },
+            { "<leader>E", "<Cmd>Neotree toggle<CR>", desc = "Toggle file manager" },
         },
     },
 }
