@@ -150,7 +150,7 @@ return {
         opts = {},
         -- Optional dependencies
         opts = function(_, opts)
-            vim.keymap.set("n", "e", "<CMD>Oil<cr>", { desc = "Open Oil with parent directory" })
+            vim.keymap.set("n", "<leader>e", "<CMD>Oil<cr>", { desc = "Open Oil with parent directory" })
         end,
         dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     },
