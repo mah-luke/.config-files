@@ -147,7 +147,7 @@ return {
         end,
     },
     {
-        "nvimtools/none-ls.nvim", -- "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
