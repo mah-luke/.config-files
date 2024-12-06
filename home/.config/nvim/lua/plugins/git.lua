@@ -76,8 +76,10 @@ return {
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
-
         opts = {},
+        config = function(_, opts)
+            vim.keymap.set("n", "<leader>G", "<cmd>Neogit<cr>", { desc = "Open Neogit" })
+        end,
     },
     {
         "ldelossa/gh.nvim",
