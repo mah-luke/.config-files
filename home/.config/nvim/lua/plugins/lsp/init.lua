@@ -195,6 +195,7 @@ return {
                             "--space-redirects",
                         },
                     }),
+                    nls.builtins.formatting.prettierd.with({}),
                     -- nls.builtins.formatting.shellharden,
                 },
             }

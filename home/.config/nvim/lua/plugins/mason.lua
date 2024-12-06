@@ -33,6 +33,8 @@ return {
                 "texlab",
                 -- Security
                 "trivy",
+                -- Formatting
+                "prettierd", -- Markdown and many others
             },
         },
         config = function(_, opts)
