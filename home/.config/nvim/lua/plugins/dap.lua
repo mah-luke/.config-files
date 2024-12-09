@@ -52,13 +52,27 @@ return {
         ft = "python",
         dependencies = { "mfussenegger/nvim-dap" },
         config = function()
-            require("dap-python").setup("/home/lukas/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
-            require("dap-python").test_runner = "pytest"
+            local dap_python = require("dap-python")
+            dap_python.setup("/home/lukas/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+
+            -- not working:
+            -- table.insert(require("dap").configurations.python, {
+            --     justMyCode = false,
+            -- })
+
+            -- require("dap-python").test_runner = "pytest"
             -- require("dap-python").setup("/usr/bin/python3")
         end,
         keys = {
             {
-                "<leader>dpr",
+                "<leader>dom",
+                function()
+                    require("dap-python").test_method({config={justMyCode=false}})
+                end,
+                desc = "DAP Python Run",
+            },
+            {
+                "<leader>dm",
                 function()
                     require("dap-python").test_method()
                 end,
