@@ -1,0 +1,9 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHe is not a fan of Death Metal, Black Metal, Metalcore or Heavy Metal, but also likes some mainstream rock bands like Metallica or Iron Maiden and is not a fan of pop music or hip-hop.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHe is a fan of bands like Amon Amarth, Sabaton, and Blind Guardian.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThese bands are not Power Metal bands, but rather Heavy Metal, Symphonic Metal, Metalcore, and Nu Metal, respectively.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHowever, the Group-Specific List contains more songs from bands that Alex does not like, such as Iron Maiden, Nightwish, Bring Me The Horizon, and Slipknot.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QYour Neutral List: Amon Amarth - Twilight of the Thunder God (Power Metal) Sabaton - The Last Stand (Power Metal) Helloween - I Want Out (Power Metal) Powerwolf - Sainted by the Storm (Power Metal) Metallica - Master of Puppets (Heavy Metal)\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QYour Group-Specific List: Metallica - Master of Puppets (Heavy Metal) Iron Maiden - Fear of the Dark (Heavy Metal) Nightwish - Ghost Love Score (Symphonic Metal) Evanescence - Bring Me to Life (Nu Metal) Within Temptation - Angels (Symphonic Metal)\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHowever, the Group-Specific List contains more songs from bands that Alex does not like, such as Evanescence, Nightwish and Within Temptation.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAnalyze and reflect on you example using this framework: FaiRLLM.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSelect one of the frameworks FaiRLLM or CFaiRLLM.\\E$"}
