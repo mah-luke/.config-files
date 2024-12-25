@@ -57,7 +57,7 @@ return {
         -- vim.api.nvim_set_hl(0, "DiffText", { bg = "#31454d" })
         vim.api.nvim_set_hl(0, "DiffAdd", { fg = default_text, bg = Colors.base0B })
         vim.api.nvim_set_hl(0, "DiffDelete", { fg = default_text, bg = Colors.base08 })
-        vim.api.nvim_set_hl(0, "DiffChange", { fg = default_text, bg = Colors.base03 })
-        vim.api.nvim_set_hl(0, "DiffText", { fg = default_text, bg = Colors.base0D })
+        vim.api.nvim_set_hl(0, "DiffChange", { fg = Colors.base0A })
+        vim.api.nvim_set_hl(0, "DiffText", { fg = default_text, bg = Colors.base0A })
     end,
 }
