@@ -65,7 +65,7 @@ return {
         end,
         keys = {
             {
-                "<leader>dom",
+                "<leader>dpr",
                 function()
                     require("dap-python").test_method({config={justMyCode=false}})
                 end,

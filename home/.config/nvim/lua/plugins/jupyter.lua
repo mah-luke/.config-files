@@ -16,19 +16,21 @@ return {
             "leafo/magick",
         },
         opts = {
+            enabled=false,
             backend = "kitty", -- whatever backend you would like to use
             -- max_width = 100,
             -- max_height = 12,
             max_height_window_percentage = 70, -- math.huge,
             max_width_window_percentage = 70, -- math.huge,
             window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
-            -- window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+            window_overlap_clear_ft_ignore = { },--"cmp_menu", "cmp_docs", "" },
+            tmux_show_only_in_active_window = true,
 
             integrations = {
                 markdown = {
-                    enabled = true,
-                    clear_in_insert_mode = false,
-                    download_remote_images = true,
+                    enabled = false,
+                    clear_in_insert_mode = true,
+                    -- download_remote_images = true,
                     only_render_image_at_cursor = true,
                     filetypes = { "markdown", "quarto" }, -- markdown extensions (ie. quarto) can go here
                 },
@@ -237,7 +239,7 @@ return {
             -- vim.g.molten_cover_empty_lines = true
             -- vim.g.molten_comment_string = "# %%"
 
-            vim.g.molten_auto_image_popup = true
+            vim.g.molten_auto_image_popup = false
             -- vim.g.molten_show_mimetype_debug = true
             vim.g.molten_auto_open_output = false
             vim.g.molten_image_provider = "image.nvim"
