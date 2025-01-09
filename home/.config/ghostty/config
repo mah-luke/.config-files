@@ -38,4 +38,6 @@ font-style = "medium"
 window-decoration = false
 copy-on-select = false
 confirm-close-surface = false
+window-padding-x = 0
+window-padding-y = 0
 
