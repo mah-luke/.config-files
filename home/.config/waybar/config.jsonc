@@ -83,6 +83,8 @@
             "class<vesktop>": "",
             "class<chromium>": "󰊯",
             "class<google-chrome>": "",
+            "class<.*ghostty>": "󱙝",
+            "class<.*ghostty> title<.*nvim.*>": "",
             // "empty": ""
         },
         "move-to-monitor": true

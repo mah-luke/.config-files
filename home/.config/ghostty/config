@@ -28,3 +28,14 @@ palette = 18=#282828
 palette = 19=#383838
 palette = 20=#b8b8b8
 palette = 21=#e8e8e8
+
+# Font
+font-family = "FiraCode Nerd Font"
+font-size = 10
+font-style = "bold"
+
+# General
+window-decoration = false
+copy-on-select = false
+confirm-close-surface = false
+
