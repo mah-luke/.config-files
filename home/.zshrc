@@ -173,7 +173,7 @@ if [ -f '/home/lukas/.config/shell/custom.sh' ]; then
     source '/home/lukas/.config/shell/custom.sh'
 fi
 
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-ghostty" ]; then
     tmux
 fi
 

@@ -32,7 +32,7 @@ palette = 21=#e8e8e8
 # Font
 font-family = "FiraCode Nerd Font"
 font-size = 10
-font-style = "bold"
+font-style = "medium"
 
 # General
 window-decoration = false
