@@ -16,14 +16,14 @@ return {
             "leafo/magick",
         },
         opts = {
-            enabled=false,
+            enabled = false,
             backend = "kitty", -- whatever backend you would like to use
             -- max_width = 100,
             -- max_height = 12,
             max_height_window_percentage = 70, -- math.huge,
             max_width_window_percentage = 70, -- math.huge,
             window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
-            window_overlap_clear_ft_ignore = { },--"cmp_menu", "cmp_docs", "" },
+            window_overlap_clear_ft_ignore = {}, --"cmp_menu", "cmp_docs", "" },
             tmux_show_only_in_active_window = true,
 
             integrations = {
@@ -172,7 +172,8 @@ return {
         "quarto-dev/quarto-nvim",
         dependencies = {
             "jmbuhr/otter.nvim",
-            "nvim-cmp",
+            -- "nvim-cmp",
+            "saghen/blink.cmp",
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
             "nvimtools/hydra.nvim",
@@ -254,8 +255,7 @@ return {
             vim.g.molten_wrap_output = true
             vim.g.molten_tick_rate = 144
 
-
-            vim.api.nvim_set_hl(0, "MoltenCell", {bg=""})
+            vim.api.nvim_set_hl(0, "MoltenCell", { bg = "" })
 
             vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>", { desc = "Initialize Molten", silent = true })
             vim.keymap.set("n", "<localleader>ir", function()

@@ -78,6 +78,7 @@ M.lsp_flags = {
 
 -- Autocompletion
 -- See https://github.com/hrsh7th/cmp-nvim-lsp
-M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- M.capabilities = require("blink.cmp").default_capabilities()
 
 return M

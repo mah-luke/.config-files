@@ -20,6 +20,7 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mason.nvim",
+            "saghen/blink.cmp",
         },
         config = function()
             -- Keymaps
