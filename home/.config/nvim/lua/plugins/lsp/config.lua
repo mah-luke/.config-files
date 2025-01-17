@@ -17,6 +17,9 @@ M.on_attach = function(client, bufnr)
     local function vmap(keys, func, desc)
         vim.keymap.set("v", keys, func, { buffer = bufnr, desc = desc })
     end
+    local function imap(keys, func, desc)
+        vim.keymap.set("i", keys, func, { buffer = bufnr, desc = desc })
+    end
 
     nmap("gd", vim.lsp.buf.definition, "Go to definition")
     nmap("gt", vim.lsp.buf.type_definition, "Type definition")
@@ -31,6 +34,8 @@ M.on_attach = function(client, bufnr)
     nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
     nmap("gi", vim.lsp.buf.implementation, "Go to implementation")
     nmap("<C-k>", vim.lsp.buf.signature_help, "Signature documentation")
+    imap("<C-k>", vim.lsp.buf.signature_help, "Signature documentation")
+
 
     nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace add folder")
     nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Workspace remove folder")
