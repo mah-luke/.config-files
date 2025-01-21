@@ -33,8 +33,8 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>ca", vim.lsp.buf.code_action, "Code action")
     nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
     nmap("gi", vim.lsp.buf.implementation, "Go to implementation")
-    nmap("<C-m>", vim.lsp.buf.signature_help, "Signature documentation")
-    imap("<C-m>", vim.lsp.buf.signature_help, "Signature documentation")
+    -- nmap("<C-m>", vim.lsp.buf.signature_help, "Signature documentation")
+    imap("<C-k>", vim.lsp.buf.signature_help, "Signature documentation")
 
 
     nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "Workspace add folder")
