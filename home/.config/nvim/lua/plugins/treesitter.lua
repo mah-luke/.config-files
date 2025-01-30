@@ -42,6 +42,7 @@ return {
                 "vimdoc",
                 "yaml",
                 "rust",
+                "ron"
             },
             sync_install = false,
             auto_install = true,

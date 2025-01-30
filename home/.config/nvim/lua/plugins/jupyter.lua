@@ -249,7 +249,7 @@ return {
             vim.g.molten_image_location = "float"
             --
             vim.g.molten_output_win_border = { "", "━", "", "" }
-            vim.g.molten_output_win_max_height = 48
+            vim.g.molten_output_win_max_height = 32
             -- vim.g.molten_output_virt_lines = true
             vim.g.molten_virt_text_output = true
             vim.g.molten_use_border_highlights = true

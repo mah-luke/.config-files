@@ -23,6 +23,7 @@ return {
                 -- Rust
                 "codelldb", -- debug for C, C++ & Rust
                 "rust-analyzer",
+                "bacon-ls",
                 -- C / C++
                 "clangd",
                 -- Make

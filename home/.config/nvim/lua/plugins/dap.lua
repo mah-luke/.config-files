@@ -10,7 +10,7 @@ return {
         dependencies = {
             {
                 "theHamsta/nvim-dap-virtual-text",
-                config = true,
+                config = false,
             },
             "rcarriga/nvim-dap-ui",
             "nvim-neotest/nvim-nio",

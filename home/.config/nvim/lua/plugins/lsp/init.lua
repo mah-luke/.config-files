@@ -74,7 +74,10 @@ return {
                 },
 
                 -- Rust
-                rust_analyzer = {},
+                -- rust_analyzer = {enabled = false},
+                bacon_ls = {
+                    enabled = true,
+                },
 
                 -- C
                 clangd = {
