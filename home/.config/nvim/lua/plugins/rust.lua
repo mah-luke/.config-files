@@ -2,7 +2,7 @@ return {
 
     {
         "mrcjkb/rustaceanvim",
-        version = vim.fn.has("nvim-0.10.0") == 0 and "^4" or false,
+        version = "*",
         ft = { "rust" },
         opts = {
             server = {
@@ -29,6 +29,11 @@ return {
                         -- Enable diagnostics if using rust-analyzer
                         diagnostics = {
                             enable = true,
+                        },
+                        completion = {
+                            callable = {
+                                snippets = "none",
+                            }
                         },
                         procMacro = {
                             enable = true,

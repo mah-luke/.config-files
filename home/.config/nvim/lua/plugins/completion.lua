@@ -36,9 +36,15 @@ return {
                 nerd_font_variant = "mono",
             },
             completion = {
+                list = {
+                    selection = {
+                        preselect = true,
+                        auto_insert= true,
+                    },
+                },
                 accept = {
                     auto_brackets = {
-                        enabled = false,
+                        enabled = true,
                     },
                 },
                 menu = {
@@ -61,14 +67,21 @@ return {
                     auto_show_delay_ms = 200,
                 },
                 ghost_text = {
-                    enabled = vim.g.ai_cmp,
+                    enabled = false,
                 },
             },
 
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+                providers = {
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        score_offset = 100, -- show at a higher priority than lsp
+                    },
+                },
                 -- cmdline = {},
                 -- compat = {},
             },
@@ -106,6 +119,50 @@ return {
 
             -- Unset custom prop to pass blink.cmp validation
             opts.sources.compat = nil
+
+            opts.appearance = opts.appearance or {}
+            opts.appearance.kind_icons = vim.tbl_extend("force", opts.appearance.kind_icons or {}, {
+                Array = " ",
+                Boolean = "󰨙 ",
+                Class = " ",
+                Codeium = "󰘦 ",
+                Color = " ",
+                Control = " ",
+                Collapsed = " ",
+                Constant = "󰏿 ",
+                Constructor = " ",
+                Copilot = " ",
+                Enum = " ",
+                EnumMember = " ",
+                Event = " ",
+                Field = " ",
+                File = " ",
+                Folder = " ",
+                Function = "󰊕 ",
+                Interface = " ",
+                Key = " ",
+                Keyword = " ",
+                Method = "󰊕 ",
+                Module = " ",
+                Namespace = "󰦮 ",
+                Null = " ",
+                Number = "󰎠 ",
+                Object = " ",
+                Operator = " ",
+                Package = " ",
+                Property = " ",
+                Reference = " ",
+                Snippet = "󱄽 ",
+                String = " ",
+                Struct = "󰆼 ",
+                Supermaven = " ",
+                TabNine = "󰏚 ",
+                Text = " ",
+                TypeParameter = " ",
+                Unit = " ",
+                Value = " ",
+                Variable = "󰀫 ",
+            })
 
             -- check if we need to override symbol kinds
             for _, provider in pairs(opts.sources.providers or {}) do
@@ -150,79 +207,6 @@ return {
             opts = {},
             version = "*",
         },
-    },
-
-    {
-        "saghen/blink.cmp",
-        opts = function(_, opts)
-            opts.appearance = opts.appearance or {}
-            opts.appearance.kind_icons = vim.tbl_extend("force", opts.appearance.kind_icons or {}, {
-                Array = " ",
-                Boolean = "󰨙 ",
-                Class = " ",
-                Codeium = "󰘦 ",
-                Color = " ",
-                Control = " ",
-                Collapsed = " ",
-                Constant = "󰏿 ",
-                Constructor = " ",
-                Copilot = " ",
-                Enum = " ",
-                EnumMember = " ",
-                Event = " ",
-                Field = " ",
-                File = " ",
-                Folder = " ",
-                Function = "󰊕 ",
-                Interface = " ",
-                Key = " ",
-                Keyword = " ",
-                Method = "󰊕 ",
-                Module = " ",
-                Namespace = "󰦮 ",
-                Null = " ",
-                Number = "󰎠 ",
-                Object = " ",
-                Operator = " ",
-                Package = " ",
-                Property = " ",
-                Reference = " ",
-                Snippet = "󱄽 ",
-                String = " ",
-                Struct = "󰆼 ",
-                Supermaven = " ",
-                TabNine = "󰏚 ",
-                Text = " ",
-                TypeParameter = " ",
-                Unit = " ",
-                Value = " ",
-                Variable = "󰀫 ",
-            })
-        end,
-    },
-
-    {
-        "saghen/blink.cmp",
-        opts = {
-            sources = {
-                -- add lazydev to your completion providers
-                default = { "lazydev" },
-                providers = {
-                    lazydev = {
-                        name = "LazyDev",
-                        module = "lazydev.integrations.blink",
-                        score_offset = 100, -- show at a higher priority than lsp
-                    },
-                },
-            },
-        },
-    },
-
-    {
-        "saghen/blink.compat",
-        optional = true, -- make optional so it's only enabled if any extras need it
-        opts = {},
-        version = not vim.g.lazyvim_blink_main and "*",
     },
 
     {

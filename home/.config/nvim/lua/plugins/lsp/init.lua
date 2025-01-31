@@ -76,7 +76,7 @@ return {
                 -- Rust
                 -- rust_analyzer = {enabled = false},
                 bacon_ls = {
-                    enabled = true,
+                    enabled = false,
                 },
 
                 -- C
