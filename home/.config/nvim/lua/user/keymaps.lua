@@ -56,6 +56,8 @@ map({ "n", "v" }, "<leader>yy", '"+yy', "Copy line to clipboard")
 map({ "n", "v" }, "<leader>p", '"+p', "Paste from clipboard")
 map({ "n", "v" }, "<leader>P", '"+P', "Paste from clipboard")
 
+map({"i"}, "<C-l>", "<Right>", "move to right in insert")
+
 -- Provide a command to create a blank new Python notebook
 -- note: the metadata is needed for Jupytext to understand how to parse the notebook.
 -- if you use another language than Python, you should change it in the template.
