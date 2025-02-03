@@ -12,18 +12,17 @@ return {
     {
         -- see the image.nvim readme for more information about configuring this plugin
         "3rd/image.nvim",
-        dependencies = {
-            "leafo/magick",
-        },
+        build = false,
         opts = {
-            enabled=true,
+            enabled = true,
             backend = "kitty", -- whatever backend you would like to use
+            processor = "magick_cli",
             max_width = 1000,
             max_height = 1500,
             max_height_window_percentage = 100,
             max_width_window_percentage = 100,
             window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
-            window_overlap_clear_ft_ignore = {"cmp_menu", "cmp_docs", "" },
+            window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
             tmux_show_only_in_active_window = true,
 
             integrations = {
