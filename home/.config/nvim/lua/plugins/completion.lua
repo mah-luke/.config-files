@@ -52,7 +52,7 @@ return {
                         treesitter = { "lsp" },
                     },
                     cmdline_position = function()
-                        print(vim.o.columns)
+                        -- print(vim.o.columns)
                         return { 6, tonumber(vim.o.columns) / 2 - 29 }
                         -- if vim.g.ui_cmdline_pos ~= nil then
                         --     local pos = vim.g.ui_cmdline_pos -- (1, 0)-indexed
