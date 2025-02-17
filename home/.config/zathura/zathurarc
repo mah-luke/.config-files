@@ -16,8 +16,8 @@ set notification-error-fg       "#ab4642"
 set notification-warning-bg     "#181818"
 set notification-warning-fg     "#ab4642"
 
-set highlight-color             "#f7ca88"
-set highlight-active-color      "#7cafc2"
+set highlight-color             "rgba(247, 202, 136, 0.5)" # "#f7ca88"
+set highlight-active-color      "rgba(124, 175, 194, 0.5)" #7cafc2"
 
 set completion-bg               "#282828"
 set completion-fg               "#7cafc2"
@@ -25,8 +25,8 @@ set completion-fg               "#7cafc2"
 set completion-highlight-fg     "#f8f8f8"
 set completion-highlight-bg     "#7cafc2"
 
-set recolor-lightcolor          "#181818"
-set recolor-darkcolor           "#e8e8e8"
+# set recolor-lightcolor          "#181818"
+# set recolor-darkcolor           "#e8e8e8"
 
 # set recolor                     "true"
 # set recolor-keephue             "true"

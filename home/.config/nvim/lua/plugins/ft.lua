@@ -94,7 +94,9 @@ return {
                 continuous = 1,
                 executable = "latexmk",
                 hooks = {},
-                -- \ 'options' : [
+                options = {
+                    -- '-pdflua'
+                }
                 -- \   '-verbose',
                 -- \   '-file-line-error',
                 -- \   '-syn:

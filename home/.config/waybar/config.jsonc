@@ -85,6 +85,7 @@
             "class<google-chrome>": "",
             "class<.*ghostty>": "󱙝",
             "class<.*ghostty> title<.*nvim.*>": "",
+            "class<.*zathura>": ""
             // "empty": ""
         },
         "move-to-monitor": true
