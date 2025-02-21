@@ -1,0 +1,11 @@
+[Unit]
+Description=Local system suspend actions, needed in order to wait for hyprlock to complete before suspending when calling suspend from cli.
+Before=sleep.target
+
+[Service]
+Type=simple
+ExecStartPre=-/usr/bin/sleep 1
+ExecStart=-/usr/bin/true
+
+[Install]
+WantedBy=sleep.target
