@@ -4,7 +4,7 @@ Before=sleep.target
 
 [Service]
 Type=simple
-ExecStartPre=-/usr/bin/sleep 1
+ExecStartPre=-/usr/bin/sleep 2
 ExecStart=-/usr/bin/true
 
 [Install]
