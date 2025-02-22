@@ -212,7 +212,7 @@ return {
     {
         "barreiroleo/ltex_extra.nvim",
         branch = "dev",
-        -- ft = { "markdown", "tex" },
+        ft = { "markdown", "tex" },
         opts = {
             load_langs = { "en-US", "de-AT" },
             path = "~/.config/ltex",
