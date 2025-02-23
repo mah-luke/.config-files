@@ -138,7 +138,9 @@ return {
                     },
                 },
 
-                texlab = {},
+                texlab = {
+                    filetypes = { "tex", "plaintex", "bib", "markdown" },
+                },
             }
             for name, config in pairs(servers) do
                 config = vim.tbl_deep_extend("force", {}, {

@@ -39,17 +39,23 @@ return {
                 list = {
                     selection = {
                         preselect = true,
-                        auto_insert= true,
+                        auto_insert = true,
                     },
                 },
                 accept = {
                     auto_brackets = {
                         enabled = true,
+                        kind_resolution = {
+                            enabled = true,
+                            blocked_filetypes = { "markdown", "latex" },
+                        },
+                        override_brackets_for_filetypes = {},
                     },
                 },
                 menu = {
                     draw = {
                         treesitter = { "lsp" },
+                        -- columns = { { "label", "label_description", gap = 1 }, { "kind_icon"} },
                     },
                     cmdline_position = function()
                         -- print(vim.o.columns)

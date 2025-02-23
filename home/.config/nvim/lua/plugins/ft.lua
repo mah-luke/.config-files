@@ -48,7 +48,7 @@ return {
             win_options = {
                 conceallevel = {
                     default = vim.api.nvim_get_option_value("conceallevel", {}),
-                    rendered = 3,
+                    rendered = 0,
                 },
             },
             render_modes = true,
