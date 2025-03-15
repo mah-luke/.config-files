@@ -31,7 +31,7 @@ return {
                 "gitignore",
                 "java",
                 "json",
-                -- "latex",
+                "latex",
                 "lua",
                 "markdown",
                 "markdown_inline",
@@ -42,17 +42,17 @@ return {
                 "vimdoc",
                 "yaml",
                 "rust",
-                "ron"
+                "ron",
             },
             sync_install = false,
             auto_install = true,
             ignore_install = {
-                "latex", -- vimtex does not recomment treesitter
+                -- "latex", -- vimtex does not recommend treesitter
             },
             highlight = {
                 enable = true,
-                disable = { "latex" },
-                additional_vim_regex_highlighting = false,
+                disable = { "latex"},
+                -- additional_vim_regex_highlighting = { "latex", "markdown" },
             },
             incremental_selection = {
                 enable = true,

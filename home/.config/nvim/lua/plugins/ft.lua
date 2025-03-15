@@ -41,14 +41,23 @@ return {
     -- },
     {
         "MeanderingProgrammer/render-markdown.nvim",
+        enabled = true,
         main = "render-markdown",
         name = "render-markdown", -- don't clash with other markdown.nvim plugin
-        ft = "markdown",
+        ft = { "markdown" },
         opts = {
+            latex = {
+                enabled = false,
+                converter = "latex2text",
+                render_modes = true,
+                top_pad = 0,
+                bottom_pad = 0,
+                highlight = "RenderMarkdownMath",
+            },
             win_options = {
                 conceallevel = {
                     default = vim.api.nvim_get_option_value("conceallevel", {}),
-                    rendered = 0,
+                    rendered = 2,
                 },
             },
             render_modes = true,
@@ -84,9 +93,8 @@ return {
         -- https://github.com/lervag/vimtex
         -- pacman -S zathura xdotools
         "lervag/vimtex",
-        ft = "tex",
         lazy = false,
-        config = function()
+        init = function()
             vim.g.vimtex_compiler_latexmk = {
                 aux_dir = "auxil",
                 out_dir = "out",
@@ -96,16 +104,39 @@ return {
                 hooks = {},
                 options = {
                     -- '-pdflua'
-                }
+                },
                 -- \   '-verbose',
                 -- \   '-file-line-error',
                 -- \   '-syn:
                 -- \   '-interaction=nonstopmode',
                 -- \ ],
+                --
+                --
             }
+            local au_group = vim.api.nvim_create_augroup("init", {})
+            -- vim.api.nvim_create_autocmd("CursorMoved", {
+            --     pattern = "*",
+            --     group = au_group,
+            --     command = [[echo join(vimtex#syntax#stack(), ' -> ')]],
+            -- })
+            vim.api.nvim_create_autocmd("BufReadPost", {
+                pattern = "*.md",
+                group = au_group,
+                command = [[set syntax=markdown]],
+            })
+
             vim.g.vimtex_view_method = "zathura"
             vim.g.vimtex_view_general_viewer = "zathura" -- :h vimtex-view-zathura
             -- vim.g.latex_view_general_options=shellescape("--synctex-forward" . '".exepath(v:progpath).' --servername '.v:servername.' +{%lline} {%ffile}"')
+            --
         end,
     },
+
+    -- {
+    --     "jbyuki/nabla.nvim",
+    --     opts = {},
+    --     config = function(_, opts)
+    --         require("nabla").enable_virt({ autogen = true, silent = false })
+    --     end,
+    -- },
 }

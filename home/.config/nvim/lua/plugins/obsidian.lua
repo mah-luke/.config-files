@@ -32,7 +32,7 @@ return {
         workspaces = {
             {
                 name = "main",
-                path = "~/OneDrive/Dokumente_Cloud/Notes/",
+                path = "~/Documents/notes",
             },
             -- {
             --     name = "no-vault",
@@ -60,7 +60,10 @@ return {
         completion = {
             min_chars = 2,
         },
-        preferred_link_style = "wiki", -- "markdown" or "wiki"
+        markdown_link_func = function (opts)
+            return require("obsidian.util").markdown_link(opts)
+        end,
+        preferred_link_style = "markdown", -- "markdown" or "wiki"
         templates = {
             folder = "template",
         },
