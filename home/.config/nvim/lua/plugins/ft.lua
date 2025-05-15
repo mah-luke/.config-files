@@ -96,7 +96,7 @@ return {
         lazy = false,
         init = function()
             vim.g.vimtex_compiler_latexmk = {
-                aux_dir = "auxil",
+                aux_dir = "aux",
                 out_dir = "out",
                 callback = 1,
                 continuous = 1,
@@ -113,17 +113,13 @@ return {
                 --
                 --
             }
-            local au_group = vim.api.nvim_create_augroup("init", {})
-            -- vim.api.nvim_create_autocmd("CursorMoved", {
-            --     pattern = "*",
+            -- Uncomment following to activate latex math for markdown. Also uncomment parts in after/syntax/markdown.vim
+            -- local au_group = vim.api.nvim_create_augroup("init", {})
+            -- vim.api.nvim_create_autocmd("BufReadPost", {
+            --     pattern = "*.md",
             --     group = au_group,
-            --     command = [[echo join(vimtex#syntax#stack(), ' -> ')]],
+            --     command = [[set syntax=markdown]],
             -- })
-            vim.api.nvim_create_autocmd("BufReadPost", {
-                pattern = "*.md",
-                group = au_group,
-                command = [[set syntax=markdown]],
-            })
 
             vim.g.vimtex_view_method = "zathura"
             vim.g.vimtex_view_general_viewer = "zathura" -- :h vimtex-view-zathura

@@ -14,7 +14,7 @@ return {
         "3rd/image.nvim",
         build = false,
         opts = {
-            enabled = true,
+            enabled = false,
             backend = "kitty", -- whatever backend you would like to use
             processor = "magick_cli",
             max_width = 1000,
