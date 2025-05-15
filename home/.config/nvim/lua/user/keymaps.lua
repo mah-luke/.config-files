@@ -56,7 +56,26 @@ map({ "n", "v" }, "<leader>yy", '"+yy', "Copy line to clipboard")
 map({ "n", "v" }, "<leader>p", '"+p', "Paste from clipboard")
 map({ "n", "v" }, "<leader>P", '"+P', "Paste from clipboard")
 
-map({"i"}, "<C-l>", "<Right>", "move to right in insert")
+map({ "i" }, "<C-l>", "<Right>", "move to right in insert")
+
+
+map("n", "<leader>fti", function()
+        require("telescope.builtin").grep_string(require("telescope.themes").get_dropdown({
+            prompt_title = "Incomplete Tasks",
+            search = "^\\s*- \\[ \\]",
+            search_dirs = { "~/Documents/notes" }, -- vim.fn.getcwd(),
+            use_regex = true,
+            initial_mode = "insert",
+            layout_strategy = "horizontal",
+            layout_config = {
+                width = 0.9,
+                height = 0.9,
+                preview_width = 0.5,
+            },
+        }))
+    end,
+    "[f]ind [t]asks [i]ncomplete")
+
 
 -- Provide a command to create a blank new Python notebook
 -- note: the metadata is needed for Jupytext to understand how to parse the notebook.
@@ -112,3 +131,4 @@ end, {
     nargs = 1,
     complete = "file",
 })
+

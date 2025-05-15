@@ -28,7 +28,7 @@ return {
       { "[t", function() require("todo-comments").jump_prev() end, desc = "todo: Previous todo comment" },
       { "<leader>tt", "<cmd>TodoTrouble<cr>", desc = "todo: Todo (Trouble)" },
       -- { "<leader>tT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
-      { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "todo: Todo" },
+      { "<leader>fT", "<cmd>TodoTelescope<cr>", desc = "Telescope todo: Todo" },
       -- { "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
    },
 }

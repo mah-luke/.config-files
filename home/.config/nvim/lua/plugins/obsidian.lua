@@ -60,7 +60,7 @@ return {
         completion = {
             min_chars = 2,
         },
-        markdown_link_func = function (opts)
+        markdown_link_func = function(opts)
             return require("obsidian.util").markdown_link(opts)
         end,
         preferred_link_style = "markdown", -- "markdown" or "wiki"
