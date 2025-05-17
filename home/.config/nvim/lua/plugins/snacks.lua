@@ -1,6 +1,25 @@
 return {
     "folke/snacks.nvim",
+    ---@type snacks.Config
     opts = {
+        ---@type table<string, snacks.win.Config>
+        styles = {
+            -- float = {
+            --     position = "float",
+            --     backdrop = 60,
+            --     height = 0.9,
+            --     width = 0.9,
+            --     zindex = 50,
+            -- },
+            snacks_image = {
+                relative = "cursor",
+                border = "rounded",
+                focusable = false,
+                backdrop = false,
+                row = 2,
+                col = 1,
+            },
+        },
         picker = {},
         explorer = {},
         image = {
@@ -20,6 +39,28 @@ return {
                 ${content}}
                 \end{document}]],
                 },
+            },
+            doc = {
+                -- enable image viewer for documents
+                -- a treesitter parser must be available for the enabled languages.
+                enabled = true,
+                -- render the image inline in the buffer
+                -- if your env doesn't support unicode placeholders, this will be disabled
+                -- takes precedence over `opts.float` on supported terminals
+                inline = true,
+                -- render the image in a floating window
+                -- only used if `opts.inline` is disabled
+                float = true,
+                max_width = 100,
+                max_height = 50,
+                -- Set to `true`, to conceal the image text when rendering inline.
+                -- (experimental)
+                ---@param lang string tree-sitter language
+                ---@param type snacks.image.Type image type
+                conceal = function(lang, type)
+                    -- only conceal math expressions
+                    return type == "math"
+                end,
             },
         },
     },
