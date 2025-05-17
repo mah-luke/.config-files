@@ -5,3 +5,7 @@ MLflow
 newpage
 STIX
 scriptum
+SDOs
+KeyVault
+eBPF
+RedPanda
