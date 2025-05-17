@@ -1,9 +1,27 @@
 return {
     "folke/snacks.nvim",
     opts = {
-        image = {},
         picker = {},
         explorer = {},
+        image = {
+            math = {
+                latex = {
+                    font_size = "large", -- see https://www.sascha-frank.com/latex-font-size.html
+                    -- for latex documents, the doc packages are included automatically,
+                    -- but you can add more packages here. Useful for markdown documents.
+                    packages = { "amsmath", "amssymb", "amsfonts", "amscd", "mathtools" },
+                    tpl = [[
+                \documentclass[preview,border=0pt,varwidth,12pt]{standalone}
+                \usepackage{${packages}}
+                \begin{document}
+                ${header}
+                { \${font_size} \selectfont
+                  \color[HTML]{${color}}
+                ${content}}
+                \end{document}]],
+                },
+            },
+        },
     },
     keys = {
         -- Top Pickers & Explorer
