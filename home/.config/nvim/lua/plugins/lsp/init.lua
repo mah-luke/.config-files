@@ -138,6 +138,10 @@ return {
                     },
                 },
 
+                -- R
+                air = {},
+                r_language_server = {},
+
                 texlab = {
                     filetypes = { "tex", "plaintex", "bib", "markdown" },
                 },

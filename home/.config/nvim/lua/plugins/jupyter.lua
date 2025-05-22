@@ -32,7 +32,7 @@ return {
                     -- download_remote_images = true,
                     only_render_image_at_cursor = true,
                     floating_windows = true,
-                    filetypes = { "markdown", "quarto" }, -- markdown extensions (ie. quarto) can go here
+                    filetypes = { "markdown", "quarto", "rmd" }, -- markdown extensions (ie. quarto) can go here
                 },
             },
         },
@@ -142,7 +142,7 @@ return {
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
-        ft = { "quarto", "markdown" },
+        ft = { "quarto", "markdown", "rmd" },
         config = function(_, opts)
             local otter = require("otter")
             otter.setup(opts)
@@ -172,18 +172,19 @@ return {
         "quarto-dev/quarto-nvim",
         dependencies = {
             "jmbuhr/otter.nvim",
+            "benlubas/molten-nvim",
             -- "nvim-cmp",
             "saghen/blink.cmp",
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
             "nvimtools/hydra.nvim",
         },
-        ft = { "quarto", "markdown" },
+        ft = { "quarto", "markdown", "rmd" },
         config = function()
             local quarto = require("quarto")
             quarto.setup({
                 lspFeatures = {
-                    languages = { "python", "rust", "lua" },
+                    languages = { "python", "rust", "lua", "r" },
                     chunks = "all", -- 'curly' or 'all'
                     diagnostics = {
                         enabled = true,
@@ -259,6 +260,7 @@ return {
             vim.api.nvim_set_hl(0, "MoltenCell", { bg = "" })
 
             vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>", { desc = "Initialize Molten", silent = true })
+            vim.keymap.set("n", "<localleader>iR", ":MoltenInit ir<CR>", { desc = "Initialize Molten for R", silent = true })
             vim.keymap.set("n", "<localleader>ir", function()
                 vim.cmd("MoltenInit rust")
             end, { desc = "Initialize Molten for Rust", silent = true })

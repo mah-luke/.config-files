@@ -32,6 +32,9 @@ return {
                 "latexindent",
                 "ltex-ls",
                 "texlab",
+                -- R
+                -- "r-languageserver",
+                "air",
                 -- Security
                 "trivy",
                 -- Formatting
