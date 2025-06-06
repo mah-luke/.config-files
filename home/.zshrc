@@ -136,6 +136,7 @@ function zle-keymap-select() {
 zle-line-init() {
     echo -ne '\e[6 q'
 }
+
 zle -N zle-keymap-select
 zle -N zle-line-init
 
@@ -162,12 +163,6 @@ zstyle ':completion:*' menu select
 # case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-#
-# # The next line enables shell command completion for gcloud.
-if [ -f '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lukas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Device specific
 if [ -f '/home/lukas/.config/shell/custom.sh' ]; then
     source '/home/lukas/.config/shell/custom.sh'
@@ -176,6 +171,8 @@ fi
 if [ -z "$TMUX" ] && [ "$TERM" = "xterm-ghostty" ]; then
     tmux
 fi
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"

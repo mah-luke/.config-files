@@ -2,8 +2,6 @@
 # See hosts(5) for details.
 
 127.0.0.1	localhost
-
-#
 192.168.0.2	rpi
 192.168.0.3	desktop
 192.168.0.4	laptop

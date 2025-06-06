@@ -15,7 +15,7 @@
 ; [diff "ipynb"]
 ;    textconv = \"/home/lukas/.pyenv/versions/3.10.8/bin/python3.10\" -m nbstripout -t
 [commit]
-   gpgsign = true
+   ; gpgsign = true
    verbose = true
 [interactive]
     diffFilter = delta --color-only
