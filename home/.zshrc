@@ -172,7 +172,7 @@ if [ -z "$TMUX" ] && [ "$TERM" = "xterm-ghostty" ]; then
     tmux
 fi
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
