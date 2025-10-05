@@ -56,5 +56,8 @@ alias paco='sudo pacman -Qdtq | sudo pacman -Rns -' # remove orphans
 alias suspendexit="systemctl suspend && exit"
 alias desktopwol='wol ${MAC_DESKTOP}'
 
+
+alias notify-terraria='ssh rpi "sudo journalctl -fu terraria" | ( while true; do MSG=""; while read -t .1 LINE; do MSG="$MSG $LINE"; done; if [ "$MSG" != "" ]; then notify-send -t 5000 "Terraria Server" "$MSG"; fi; done; )'
+
 # misc
 alias get-pdfs="mkdir pdfs && find ./ -type f -exec cp {} -t pdfs \;"
