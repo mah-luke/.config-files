@@ -40,3 +40,12 @@ And run inside neovim:
 ```
 TODO: currently this approach does not work for dic lab, maybe go the jupyterhub route or forward all ports mentioned in the json?
     There seems to exist the jupyter console --ssh=<ssh-name>  possibility, did not work for dic
+
+### Rust REPL:
+Install [evcxr_jupyter](https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter) from AUR and install its kernel with:
+
+```sh
+evcxr_jupyter --install
+```
+
+Start the rust kernel using `:MoltenInit rust`.
