@@ -60,7 +60,7 @@ return {
 
                 -- Python
                 ruff = {},
-                pyright = {
+                basedpyright = {
                     analysis = {
                         diagnosticSeverityOverrides = {
                             reportUnusedExpression = "none",
