@@ -10,3 +10,7 @@ KeyVault
 eBPF
 RedPanda
 Dex
+GloVe
+FastText
+CBOW
+co-occurence
