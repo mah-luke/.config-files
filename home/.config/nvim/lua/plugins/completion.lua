@@ -7,6 +7,7 @@ return {
         -- optional: provides snippets for the snippet source
         dependencies = {
             "rafamadriz/friendly-snippets",
+            "Kaiser-Yang/blink-cmp-avante", -- Avante completion source
         },
         event = "InsertEnter",
 
@@ -80,12 +81,16 @@ return {
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+                default = { "lsp", "path", "snippets", "buffer", "lazydev", "avante" },
                 providers = {
                     lazydev = {
                         name = "LazyDev",
                         module = "lazydev.integrations.blink",
                         score_offset = 100, -- show at a higher priority than lsp
+                    },
+                    avante = {
+                        name = "Avante",
+                        module = "blink-cmp-avante",
                     },
                 },
                 -- cmdline = {},
@@ -128,7 +133,8 @@ return {
 
             opts.appearance = opts.appearance or {}
             opts.appearance.kind_icons = vim.tbl_extend("force", opts.appearance.kind_icons or {}, {
-                Array = " ",
+                Array = " ",
+                Avante = " ",
                 Boolean = "󰨙 ",
                 Class = " ",
                 Codeium = "󰘦 ",

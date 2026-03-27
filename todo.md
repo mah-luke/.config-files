@@ -4,4 +4,3 @@
 
 - rainbow brackets
 - rust-tools
-
