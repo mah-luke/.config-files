@@ -74,7 +74,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     autoswitch_virtualenv
     git
-    poetry
     z
     zsh-autosuggestions
     zsh-syntax-highlighting # keep at end
