@@ -25,7 +25,17 @@ return {
             -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
             -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
             -- See the full "keymap" documentation for information on defining your own keymap.
-            keymap = { preset = "default", ["<M-k>"] = { "show", "show_documentation", "hide_documentation" } },
+            keymap = {
+                preset = "default",
+                ["<M-k>"] = { "show", "show_documentation", "hide_documentation" },
+                ["<Tab>"] = {
+                    "snippet_forward",
+                    function()
+                        return require("sidekick").nes_jump_or_apply()
+                    end,
+                    "fallback",
+                },
+            },
 
             appearance = {
                 -- Sets the fallback highlight groups to nvim-cmp's highlight groups

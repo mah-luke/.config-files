@@ -79,6 +79,9 @@ return {
                     enabled = false,
                 },
 
+                -- Copilot (required for Sidekick NES)
+                copilot = {},
+
                 -- C
                 clangd = {
                     keys = {
